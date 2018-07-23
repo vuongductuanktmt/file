@@ -341,6 +341,8 @@ function search_position(id) {
                 st.onClick(node.id);
                 // neu ten ton trai tren cay co san, thi se click vao node do
                 init_node(node);
+                PositionApp.loading = false;
+                PositionApp.selected_node = node;
                 return;
             }
         });
@@ -408,6 +410,7 @@ function reach_node() {
                     st.onClick(found_node_id);
                     init_node(node);
                     PositionApp.selected_node = node;
+                    PositionApp.loading = false;
                     clearInterval(auto_timeout_id);
                 }
 
