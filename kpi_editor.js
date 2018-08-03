@@ -880,9 +880,6 @@ var v = new Vue({
         tags: [],
         searched_kpis: [],
         next_url_kpi_lib: '',
-        query_kpilib: '',
-        filter_department: null,
-        filter_function: null,
         DEPARTMENTS: COMMON.Departments,
         FUNCTIONS: [],
         extra_tags: [],
@@ -904,205 +901,6 @@ var v = new Vue({
 
         //datatemp for kpilib
         visible: false,
-        parent_category : [{
-            value:'dichvudoanhnghiep',
-            label: 'Dịch vụ doanh nghiệp',
-            number: '165',
-        },{
-            value: 'ketoan',
-            label: 'Kế toán',
-            number: '329',
-        },{
-            value: 'nhansu',
-            label: 'Nhân sự',
-            number: '504',
-        }],
-        child_category :[{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep1',
-            label: 'Doanh nghiệp tư nhân',
-            number: '12',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep2',
-            label: 'Thanh lý tiền tệ',
-            number: '13',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep3',
-            label: 'Cho vay nặng lãi',
-            number: '12',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep4',
-            label: 'Thuật toán KPI ',
-            number: '5',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep5',
-            label: 'Đánh giá KPI ',
-            number: '10',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep6',
-            label: 'Công nghiệp dịch vụ',
-            number: '10',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep7',
-            label: 'Kê khai tài khoản',
-            number: '12',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep8',
-            label: 'Giáo dục cá nhân',
-            number: '11',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep9',
-            label: 'Dịch vụ doanh nghiệp',
-            number: '10',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep10',
-            label: 'Doanh nghiệp Cung cầu',
-            number: '2',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep11',
-            label: 'Dịch vụ doanh nghiệp',
-            number: '16',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep12',
-            label: 'Kê khai tài khoản',
-            number: '14',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep13',
-            label: 'Dịch vụ doanh nghiệp ',
-            number: '15',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep14',
-            label: 'Dịch vụ doanh nghiệp',
-            number: '10',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep15',
-            label: 'Doanh nghiệp',
-            number: '20',
-        },{
-            parentvalue:'dichvudoanhnghiep',
-            value: 'doanhnghiep16',
-            label: 'Doanh nghiệp 2 ',
-            number: '6',
-        },{
-            parentvalue:'ketoan',
-            value: 'kehoachvabaocao',
-            label: 'Kế hoạch và báo cáo',
-            number: '30',
-        },{
-            parentvalue:'ketoan',
-            value: 'giaodich',
-            label: 'Giao dịch',
-            number: '30',
-        },{
-            parentvalue:'ketoan',
-            value: 'phantichchiphi',
-            label: 'Phân tích chi phí',
-            number: '20',
-        }, {
-            parentvalue: 'nhansu',
-            value: 'conguoi',
-            label: 'Con người',
-            number: '20',
-        }],
-        options_category: [{
-            value: 'dichvudoanhnghiep',
-            label: 'Dịch vụ doanh nghiệp (200)',
-            children: [{
-                value: 'doanhnghiep1',
-                label: 'Doanh nghiệp tư nhân (12)',
-            },{
-                value: 'doanhnghiep2',
-                label: 'Thanh lý tiền tệ (13)',
-            },{
-                value: 'doanhnghiep3',
-                label: 'Cho vay nặng lãi (12)',
-            },{
-                value: 'doanhnghiep4',
-                label: 'Thuật toán KPI (5)',
-            },{
-                value: 'doanhnghiep5',
-                label: 'Đánh giá KPI (10)',
-            },{
-                value: 'doanhnghiep6',
-                label: 'Công nghiệp dịch vụ (10)',
-            },{
-                value: 'doanhnghiep7',
-                label: 'Kê khai tài khoản (12)',
-            },{
-                value: 'doanhnghiep8',
-                label: 'Giáo dục cá nhân (11)',
-            },{
-                value: 'doanhnghiep9',
-                label: 'Dịch vụ doanh nghiệp(10)',
-            },{
-                value: 'doanhnghiep10',
-                label: 'Doanh nghiệp Cung cầu (2)',
-            },{
-                value: 'doanhnghiep11',
-                label: 'Dịch vụ doanh nghiệp (16)',
-            },{
-                value: 'doanhnghiep12',
-                label: 'Kê khai tài khoản (14)',
-            },{
-                value: 'doanhnghiep13',
-                label: 'Dịch vụ doanh nghiệp (15) ',
-            },{
-                value: 'doanhnghiep14',
-                label: 'Dịch vụ doanh nghiệp(10)',
-            },{
-                value: 'doanhnghiep15',
-                label: 'Doanh nghiệp(10',
-            },{
-                value: 'doanhnghiep16',
-                label: 'Doanh nghiệp 2 (6)',
-            }]
-        }, {
-            value: 'ketoan',
-            label: 'Kế toán (250)',
-            children: [{
-                value: 'kehoachvabaocao',
-                label: 'Kế hoạch và báo cáo(100)',
-            }, {
-                value: 'giaodich',
-                label: 'Giao dịch(110)',
-            }, {
-                value: 'phantichchiphi',
-                label: 'Phân tích chi phí(120)',
-            }, {
-                value: 'quanlytienmat',
-                label: 'Quản lý tiền mặt(64)',
-            }, {
-                value: 'kiemsoat',
-                label: 'Kiểm soát(100)',
-            }]
-        }, {
-            value: 'nhansu',
-            label: 'Nhân sự (100)',
-            children: [{
-                value: 'conguoi',
-                label: 'Con người (30)'
-            }, {
-                value: 'thoigian',
-                label: 'Thời gian (30)'
-            }, {
-                value: 'money',
-                label: 'Tiền bạc (40)'
-            }]
-        }],
         // end data temp for kpi lib
     },
     validators: {
@@ -1220,39 +1018,6 @@ var v = new Vue({
                 that.$emit('update_lock_exscore_review', newVal.monthly_review_lock)
                 that.$set('company_params.ceo_id', newVal.ceo)
                 that.get_company_performance(that.company_params)
-            }
-        },
-        query_kpilib: {
-            handler: function (newVal, oldVal) {
-                this.search_kpi_library();
-            }
-        },
-        filter_department: {
-            handler: function (newVal, oldVal) {
-                var _this = this;
-                if (newVal) {
-                    this.FUNCTIONS = this.DEPARTMENTS[newVal] || {};
-                } else {
-                    var list_func = [];
-                    Object.keys(this.DEPARTMENTS).forEach(function (key) {
-                        list_func = list_func.concat(_this.DEPARTMENTS[key] || []);
-                    })
-                    this.FUNCTIONS = list_func;
-                }
-                this.search_kpi_library();
-            }
-        },
-        filter_function: {
-            handler: function (newVal, oldVal) {
-                var _this = this;
-                if (this.FUNCTIONS.length > 0) {
-                    this.FUNCTIONS.forEach(function (obj) {
-                        if (obj.name == newVal) {
-                            _this.filter_department = obj.parent__name;
-                        }
-                    })
-                }
-                this.search_kpi_library();
             }
         },
         selected_tags: {
@@ -1403,7 +1168,7 @@ var v = new Vue({
             that.status_confirm = true;
             that.email_confirm = '';
         },
-        search_kpi_library: function (page=1) {
+        search_kpi_library: function (page=null) {
             var self = this;
             var url = `/api/v2/kpilib/search/?${kpi_lib.query_search_kpi_lib}`;
             if(page != 1 && self.next_url_kpi_lib){
@@ -4304,14 +4069,15 @@ var v = new Vue({
                 kpi_lib.child_cate = this.child_category;
                 kpi_lib.BSC_CATEGORY = this.BSC_CATEGORY;
                 kpi_lib.EXTRA_FIELDS_KPI = this.EXTRA_FIELDS;
+                kpi_lib.init_kpi_lib();
             }
         },
         get_data_kpilib: function(page=1){
             //get all kpi in kpilib when query_kpilib: ' ',
             var self = this;
             var url = '/api/v2/kpilib/';
-            if(page != 1 && self.next_url_kpi_lib){
-               url = updateQueryStringParameter(self.next_url_kpi_lib,'page', page)
+            if(page && page != 1 && self.next_url_kpi_lib){
+               url = updateQueryStringParameter(self.next_url_kpi_lib,'page', page);
             }
             self.searched_kpis = [];
             cloudjetRequest.ajax({
@@ -4326,9 +4092,9 @@ var v = new Vue({
                     kpi_lib.total_page = data.count;
                 }
             });
-            //this.search_kpi_library();
-            // init data for kpilib
-            this.init_data_for_kpilib();
+            if(page==1){
+                this.init_data_for_kpilib();
+            }
         },
 
     },
