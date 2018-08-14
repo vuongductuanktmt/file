@@ -3198,10 +3198,6 @@ input[type="checkbox"] .styled:checked + label::after, input[type="radio"] .styl
     left: 15px
 }
 
-.icon_nps img {
-    width: 100px;
-}
-
 .btn_close {
     position: absolute;
     right: 0px;
