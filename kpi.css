@@ -3198,12 +3198,17 @@ input[type="checkbox"] .styled:checked + label::after, input[type="radio"] .styl
     left: 15px
 }
 
-.icon_nps img {
-    width: 100px;
-}
-
 .btn_close {
     position: absolute;
-    right: 0px;
-    top: 0px;
+    right: -5px;
+    top: -8px;
+}
+
+.btn-system {
+    height: 34px;
+    line-height: 10px !important;
+}
+
+.color_default {
+    color: #333333;
 }
