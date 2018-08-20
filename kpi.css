@@ -3212,3 +3212,7 @@ input[type="checkbox"] .styled:checked + label::after, input[type="radio"] .styl
 .color_default {
     color: #333333;
 }
+
+[v-cloak] {
+    display: none;
+}
