@@ -1,0 +1,170 @@
+/**
+ * Created with PyCharm.
+ * User: hongleviet
+ * Date: 8/28/13
+ * Time: 11:44 AM
+ * To change this template use File | Settings | File Templates.
+ */
+ 
+.jit-autoadjust-label {
+  padding: 15px;
+}
+
+#update, #restore {
+  text-align: center;
+  width: 100px;
+  margin:0px 35px 10px 35px;
+}
+
+.button {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px / 100% Arial, Helvetica, sans-serif;
+  padding: 0.5em 1em 0.55em;
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  text-decoration: none;
+}
+
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
+/* white */
+.white {
+  color: #606060;
+  border: solid 1px #b7b7b7;
+  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+  background: -moz-linear-gradient(top,  #fff,  #ededed);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+
+.white:hover {
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+  background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+}
+
+.white:active {
+  color: #999;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+  background: -moz-linear-gradient(top,  #ededed,  #fff);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+}
+
+[id^='infovis'] {
+	position:relative;
+	width:710px;
+	height:700px;
+	margin:auto;
+	overflow:hidden;
+/*background: #000;*/
+}
+.job-card {
+	width: 280px;
+	height: 255px;
+	font-size: 12px;
+	background-color: #e6e6e6;	
+	background-image: -webkit-linear-gradient(top, #4a87a6, #317289);
+	background-image: -moz-linear-gradient(top, #4a87a6, #317289);
+	background-image: -o-linear-gradient(top, #4a87a6, #317289);
+	background-image: -ms-linear-gradient(top, #4a87a6, #317289);
+	background-image: linear-gradient(to bottom, #4a87a6, #317289);
+	border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.job-card>p {
+	padding: 2px 10px;
+	font-weight: bold;
+	color: white;
+}
+#my-roles-tab {
+	width: 892px;
+	margin-bottom: 0
+}
+.job-description {
+	background-color: #fff;
+	width: 260px;
+	margin: 0 auto;
+	height: 225px;
+	padding: 0 5px;
+	border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    overflow: auto;
+}
+.list-jobs {
+	margin-left: 10px;
+	margin-top: 10px;
+	display: table;
+	width: 870px;
+}
+.list-jobs li {
+	float: left;
+	margin: 0 10px 10px 0;
+	-webkit-box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 1px 5px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 1px 5px rgba(0,0,0,0.15);
+    -ms-box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 1px 5px rgba(0,0,0,0.15);
+    -o-box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 1px 5px rgba(0,0,0,0.15);
+    box-shadow: 0 0 1px rgba(0,0,0,0.1), 0 1px 5px rgba(0,0,0,0.15);
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    cursor: pointer;
+}
+.list-jobs li:hover, .list-jobs li.active {
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+}
+.list-jobs li.active .job-card, .job-card:hover {
+	background-image: -webkit-linear-gradient(top, #4AA651, #317289);
+	background-image: -moz-linear-gradient(top, #4AA651, #317289);
+	background-image: -o-linear-gradient(top, #4AA651, #317289);
+	background-image: -ms-linear-gradient(top, #4AA651, #317289);
+	background-image: linear-gradient(to bottom, #4AA651, #317289);
+}
+#popup-role-list .tab-content {
+	width: 880px;
+	height: 540px;
+	overflow: auto;
+	border: 1px solid #ccc;
+	border-top: transparent;
+}
+#popup-role-list .tab-content {
+	overflow: hidden;
+}
+#tab-innner-content {
+	height: 560px;
+	overflow: auto;
+}
+#id-role-name {
+	font-size: 11px;
+	display: inline-block;
+	width: 130px;
+	overflow: hidden;
+}
+#choose-role {
+	text-align: left;
+	width: 153px;
+	overflow: hidden;
+}
+#popup-role-list .tab-content {
+	border-radius: 0;
+	margin-left: 0;	
+}
