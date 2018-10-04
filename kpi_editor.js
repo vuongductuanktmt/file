@@ -705,6 +705,29 @@ Vue.component('tag-search', {
     }
 });
 
+function setToolTipKPI(el, content){
+    $(el).qtip({
+        content: {
+            text: content.replace(/(?:\r\n|\r|\n)/g, '<br/>')
+        },
+        style: {
+            classes: 'qtip-green'
+        },
+    });
+}
+
+Vue.directive('settooltipkpi', {
+    params: ['content'],
+    paramWatchers: {
+    content: function (val, oldVal) {
+        setToolTipKPI($(this.el),this.params.content);
+    }
+    },
+    bind:function () {
+        setToolTipKPI($(this.el),this.params.content);
+    }
+});
+
 Vue.component('kpi-editable', {
     delimiters: ["${", "}$"],
     props: ['kpi', 'field', 'can_edit'],
@@ -763,7 +786,14 @@ Vue.directive('autofocus', {
         }, 100);
     },
 })
-
+function findRootKPI(kpi_id,kpi_list){
+    var parent_id = kpi_list[kpi_id].refer_to
+    if (kpi_list[parent_id] === undefined){
+        return kpi_id
+    }else{
+        return findRootKPI(parent_id,kpi_list)
+    }
+}
 var v = new Vue({
     el: '#container',
     data: {
@@ -866,6 +896,8 @@ var v = new Vue({
         adjusting_chart: null,
         estimated_result_with_threshold: '',
         query: '',
+        email_confirm: '',
+        status_confirm: false,
         list_user_searched: [],
         list_surbodinates: [],
         list_surbodinates_user_viewed: [],
@@ -897,7 +929,6 @@ var v = new Vue({
         preview_attach_modal_type:'',
         same_user: false,
         disable_upload: false,
-
         //datatemp for kpilib
         visible: false,
         // end data temp for kpi lib
@@ -1094,7 +1125,7 @@ var v = new Vue({
                     && (this.kpi_list[kpi].refer_to == null || this.kpi_list[this.kpi_list[kpi].refer_to] == null)) {
                     listGroup[count] = {
                         name: this.kpi_list[kpi].refer_group_name,
-                        slug: this.kpi_list[kpi].kpi_refer_group,
+                        slug: this.kpi_list[kpi].bsc_category + this.kpi_list[kpi].kpi_refer_group,
                         category: this.kpi_list[kpi].bsc_category,
                         refer_to: this.kpi_list[kpi].refer_to,
                         id: this.kpi_list[kpi].kpi_group_id
@@ -1110,13 +1141,23 @@ var v = new Vue({
             // console.log("======================tttttttttt===================")
             // console.log(this.list_group)
         },
+
+
+
+
+        compareArrays:function(arr1, arr2) {
+            // only for array of string values. Other types was not test
+            return $(arr1).not(arr2).length == 0 && $(arr2).not(arr1).length == 0
+        },
+
         getListGroupV2: function(){
             //debugger;
             var self = this;
-            var listGroup = [];
-            var result = {}
-            var index = 0;
-            console.log("parent kpi", self.getKPIParent());
+            var listGroup = {};
+
+
+            /*
+            // console.log("parent kpi", self.getKPIParent());
             for(var kpi_id in self.getKPIParent()){
 
                 console.log("elm:", kpi_id);
@@ -1126,34 +1167,95 @@ var v = new Vue({
                     category: self.kpi_list[kpi_id].bsc_category,
                     refer_to: self.kpi_list[kpi_id].refer_to, // if this KPI is assigned to user
                     id: self.kpi_list[kpi_id].group_kpi
-                }
+                };
                 //
                 var matchedGroup = self.findGroupByID(group.id, listGroup);
                 // if found group by id that does not exist in current listGroup -> push into list Group
                 if (matchedGroup === -1){
-                    result[index] = group
+                    result[index] = group;
                     index++;
                     listGroup.push(group);
                 }
             }
-            self.$set('list_group',result)
+
+            var parent_kpis = self.getKPIParent();
+
+            function unique(array){
+                return $.grep(array,function(el,index){
+                    return index == $.inArray(el,array);
+                });
+            }
+
+            */
+            var parent_kpis = self.getKPIParent();
+            var groups = $.map(parent_kpis, function(kpi, index){
+                var group = {
+                    name: kpi.refer_group_name,
+                    slug_no_category: kpi.kpi_refer_group ,
+                    slug: kpi.bsc_category + kpi.kpi_refer_group ,
+                    category: kpi.bsc_category,
+                    refer_to: kpi.refer_to, // if this KPI is assigned to user
+                    // id: self.kpi_list[kpi_id].group_kpi
+                };
+                return group;
+            });
+
+
+            // self.kpi_list[kpi_id].kpi_refer_group
+            var unique_groups=$.grep(groups,function(group, index){
+                // return index == $.inArray(group, array);
+                var first_index_found=groups.findIndex(g => g.slug == group.slug);
+                return index == first_index_found;
+                // return index == $.inArray(group, array);
+            });
+
+            var unique_group_slugs=$.map(unique_groups, function(g, index){
+                return g.slug;
+            });
+            var pre_unique_group_slugs=$.map(self.list_group, function(g, index){
+                return g.slug;
+            });
+
+
+            if(self.compareArrays(unique_group_slugs, pre_unique_group_slugs) === false){
+                    unique_groups.sort(function(g1, g2){
+                        var g1 = g1.bsc_category + (g1.slug_no_category == 'none'?"":g1.slug_no_category);
+                        var g2 = g2.bsc_category + (g2.slug_no_category == 'none'?"":g2.slug_no_category);
+                        return g2.localeCompare(g1);
+                    });
+                self.$set('list_group',unique_groups);
+
+            }
+
+            // self.$set('list_group',result);
+
+
             // self.list_group = listGroup;
-            // console.log("====================== list group ===================")
-            // console.log(this.list_group)
+            console.log("====================== list group ===================")
+            console.log(this.list_group)
         },
 
+
+
+
+
+
+
+
+
         delete_all_kpis: function () {
+            var that = this;
             cloudjetRequest.ajax({
                 method: "POST",
                 url: '/api/kpi/services/',
                 data: {
                     'command': 'delele_all_kpis',
                     'user_id': COMMON.UserViewedId,
+                    'email': that.email_confirm
                 },
                 success: function (data) {
                     window.location.reload(true);
-                }
-
+                },
             })
         },
         disable_edit_target: function(kpi){
@@ -1186,7 +1288,6 @@ var v = new Vue({
             }else{
                 this.status_confirm = true;
             }
-
         },
 
         reset_modal_delete: function () {
@@ -1841,7 +1942,10 @@ var v = new Vue({
             resetErrorWhenShow();
         },
         formatTime: function (time) {
-            return moment(time).format('DD-MM-YYYY ss:mm:HH');
+            if (COMMON.LanguageCode == 'en'){
+                return moment(time).format('YYYY-MM-DD HH:mm:ss');
+            }
+            return moment(time).format('HH:mm:ss DD/MM/YYYY');
         },
         check_quarter_plan: function (kpi_id, type) {
             var that = this;
@@ -2314,7 +2418,8 @@ var v = new Vue({
                 success: function (data) {
                     console.log("success");
                     that.get_current_employee_performance();
-                    that.$set('kpi_list['+kpi.id+ ']',data)
+                    var update_kpi = Object.assign(that.kpi_list[kpi.id], data);
+                    that.$set('kpi_list['+kpi.id+ ']', update_kpi);
                     that.getListGroupV2()
                     //$('.group-header-kpi-name' + kpi.id).text(kpi.refer_group_name);
                     if (typeof callback == "function") {
@@ -2569,28 +2674,29 @@ var v = new Vue({
                 return false;
             }
             return true;
-
-
         },
         check_disable_edit: function (kpi) {
+            // Document permission edit quarter target & kpi target
+            // https://cloudjet.atlassian.net/wiki/spaces/PM/pages/454328403
+
+            // Admin allow edit
             if (this.is_user_system){
-                return true
-            }else{
-                if (!that.organization.allow_edit_monthly_target){
-                    return false
-                }else {
-                    if (COMMON.UserRequestID == COMMON.UserViewedId) {
-                        return false
-                    } else {
-                        if (kpi.enable_edit) {
-                            return true
-                        }
-                    }
-                }
+                return true;
             }
+
+            // Disable when the organization didn't allow to edit month target
+            if (!that.organization.allow_edit_monthly_target){
+                return false;
+            }
+
+            // Enable when the kpi allows to edit
+            if (kpi.enable_edit) {
+                return true;
+            }
+
+            // Otherwise disabled
             return false
         },
-
 
         showPreview: function (file_url) {
             if (window.location.protocol == 'https:' && file_url.match('^http://'))
@@ -2649,7 +2755,7 @@ var v = new Vue({
             var that = this;
 
             formData.append('content', $("#board-upload-action-plan .action-plan-descr").val().replace("\r\n", "<br/>"));
-            formData.append('attachment', $("#file-upload-action-plan-input")[0].files[0]);
+            formData.append('attachment', $("#file-upload-action-plan-input")[0].files[0], that.action_plan_filename);
 
             if ($("#file-upload-action-plan-input")[0].files[0]) {
                 cloudjetRequest.ajax({
@@ -2660,7 +2766,8 @@ var v = new Vue({
                     contentType: false,
                     success: function (response) {
                         console.log(response);
-                        alert('Post action plan successfully!');
+                        var mesage = gettext("Post action plan successfully!");
+                        alert(mesage);
                         // The unshift() method adds new items to the beginning of an array, and returns the new length.
                         that.list_action_plan_file.unshift(response);
                         // that.list_action_plan_file[0].avatar = COMMON.UserAvatar;
@@ -2685,10 +2792,11 @@ var v = new Vue({
         postEvidence: function () {
             var formData = new FormData();
             var that = this;
+            var file =
             console.log("KPI_ID POST:" + that.evidence_id);
             formData.append('content', $("#e-content").val().replace("\r\n", "<br/>"));
             formData.append('month', that.month);
-            formData.append('attachment', $("#file-upload")[0].files[0]);
+            formData.append('attachment', $("#file-upload")[0].files[0], that.filename);
             if ($("#file-upload")[0].files[0]) {
                 cloudjetRequest.ajax({
                     url: '/api/v2/kpi/' + that.evidence_id + '/evidence/upload/',
@@ -2786,7 +2894,7 @@ var v = new Vue({
             $('.form-start').hide();
             var width = 1;
             var file = $('#file-upload')[0].files[0];
-            var file_name = $('#file-upload')[0].files[0].name;
+            var file_name = to_slug($('#file-upload')[0].files[0].name, 'file');
             that.filename = file_name;
             var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.docx|\.pdf|\.xls|\.xlsx|\.doc|\.bmp)$/i;
             if(!allowedExtensions.exec(file_name) || file.size/1024/1024 > 5) {
@@ -2820,8 +2928,9 @@ var v = new Vue({
             $('#kpi_action_plan-modal .form-start').hide();
             var width = 1;
             var file = $('#file-upload-action-plan-input')[0].files[0];
-            var file_name = $('#file-upload-action-plan-input')[0].files[0].name;
+            var file_name = to_slug($('#file-upload-action-plan-input')[0].files[0].name, 'file');
             that.action_plan_filename = file_name;
+            that.filename = file_name;
             var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.docx|\.pdf|\.xls|\.xlsx|\.doc|\.bmp)$/i;
             if(!allowedExtensions.exec(file_name) || file.size/1024/1024 > 5) {
                 that.status_upload_action_plan = false;
@@ -3235,7 +3344,16 @@ var v = new Vue({
                 that.update_month_target(kpi);
             })
         },
-
+        findRootKPI: function(kpi_id){
+            return findRootKPI(kpi_id,this.kpi_list)
+        },
+        triggeredReloadTargetPerformance: function(child_id){
+            var self = this;
+            var root_id = self.findRootKPI(child_id)
+            if (parseInt(child_id) !== root_id) {
+                $('#kpi_reload' + root_id).click()
+            }
+        },
         update_score: function (kpi, update_quarter_target, callback = null) {
             //alert(kpi.id)
             //this.calculate_total_weight();
@@ -3299,6 +3417,7 @@ var v = new Vue({
                             that.kpi_list[kpi.id].latest_score = data.score; //JSON.parse(data);
                             that.kpi_list[kpi.id].real = data.real; //JSON.parse(data);
                             that.get_current_employee_performance();
+                            that.triggeredReloadTargetPerformance(kpi.id)
 
                             success_requestcenter(gettext("Update successful!"));
                         },
@@ -4075,22 +4194,7 @@ var v = new Vue({
         },
         init_data_for_kpilib: function(){
             if(self.organization.enable_kpi_lib == true) {
-                kpi_lib.options = [];
-                this.DEPARTMENTS.forEach(function(item){
-                    var category = {};
-                    category.label=`${item.name} (${item.count})`;
-                    category.value=item.id;
-                    category.children=[];
-                    if(item.childs.length){
-                        item.childs.forEach(function(child){
-                            var sub_category = {};
-                            sub_category.label = `${child.name} (${child.count})`;
-                            sub_category.value = child.id;
-                            category.children.push(sub_category);
-                        })
-                    }
-                    kpi_lib.options.push(category)
-                });
+                kpi_lib.options = kpi_lib.format_functions(this.DEPARTMENTS);
                 //kpi_lib.options = this.options_category;
                 kpi_lib.parent_cate = this.parent_category;
                 kpi_lib.child_cate = this.child_category;
@@ -4279,6 +4383,40 @@ function updateQueryStringParameter(uri, key, value) {
     else {
         return uri + separator + key + "=" + value;
     }
+}
+
+function to_slug(str, type='file')
+{
+    // Chuyển hết sang chữ thường
+    str = str.toLowerCase();
+
+    // xóa dấu
+    str = str.replace(/(à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ)/g, 'a');
+    str = str.replace(/(è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ)/g, 'e');
+    str = str.replace(/(ì|í|ị|ỉ|ĩ)/g, 'i');
+    str = str.replace(/(ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ)/g, 'o');
+    str = str.replace(/(ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ)/g, 'u');
+    str = str.replace(/(ỳ|ý|ỵ|ỷ|ỹ)/g, 'y');
+    str = str.replace(/(đ)/g, 'd');
+
+    // Xóa ký tự đặc biệt
+    if(type == 'file'){
+        str = str.replace(/([^0-9a-z-.\s])/g, '');
+    }else{
+        str = str.replace(/([^0-9a-z-\s])/g, '');
+    }
+
+    // Xóa khoảng trắng thay bằng ký tự -
+    str = str.replace(/(\s+)/g, '-');
+
+    // xóa phần dự - ở đầu
+    str = str.replace(/^-+/g, '');
+
+    // xóa phần dư - ở cuối
+    str = str.replace(/-+$/g, '');
+
+    // return
+    return str;
 }
 
 $(function () {
