@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="86px" viewBox="0 0 97 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Change-position" transform="translate(-983.000000, -338.000000)">
+            <g id="Group-5" transform="translate(957.000000, 318.000000)">
+                <g id="Group-4" transform="translate(24.000000, 20.000000)">
+                    <ellipse id="Oval-2" fill="#FFFFFF" cx="51" cy="14.8275862" rx="15" ry="14.8275862"></ellipse>
+                    <g id="Group" transform="translate(22.750359, 48.750359) rotate(-5.000000) translate(-22.750359, -48.750359) translate(1.750359, 27.750359)" stroke="#FFFFFF">
+                        <ellipse id="Oval-2-Copy" fill="#F68D1E" cx="10" cy="31.6321839" rx="10" ry="9.88505747"></ellipse>
+                        <path d="M41.5,0.494252874 L17.4791757,24.2389757" id="Line-2" stroke-linecap="square"></path>
+                    </g>
+                    <g id="Group" transform="translate(78.750359, 48.750359) scale(-1, 1) rotate(-5.000000) translate(-78.750359, -48.750359) translate(57.750359, 27.750359)">
+                        <ellipse id="Oval-2-Copy" fill="#FFFFFF" cx="10" cy="31.6321839" rx="10" ry="9.88505747"></ellipse>
+                        <path d="M41.5,0.494252874 L17.4791757,24.2389757" id="Line-2" stroke="#FFFFFF" stroke-linecap="square"></path>
+                    </g>
+                    <g id="Group-3" transform="translate(20.000000, 67.000000)">
+                        <path d="M0,3.96551724 C12.2288837,22.038474 43.4103592,22.7929196 56,3.96551724" id="Path-5" stroke="#FFFFFF" stroke-width="0.5"></path>
+                        <polygon id="Triangle" fill="#FFFFFF" transform="translate(56.198113, 4.052009) rotate(36.000000) translate(-56.198113, -4.052009) " points="56.198113 2.07499715 58.698113 6.02902014 53.698113 6.02902014"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

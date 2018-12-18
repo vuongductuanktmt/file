@@ -1,0 +1,156 @@
+<link rel='ractive' href='performance/kpinput.html?v=20'>
+
+
+<style>
+    .lighter {
+        opacity: 0.75;
+    }
+
+    .bordering {
+        border: 1px solid #ccc;
+
+    }
+
+    .kpi-item {
+        /*margin: 3px;
+        border-bottom: 1px dashed #888;*/
+        border: 1px #114B5F solid;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .kpi-item b {
+        text-transform: uppercase;
+        display: block;
+        background: #114B5F;
+        color: #fff;
+        padding: 3px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        /* border-radius-top: 2px;*/
+    }
+
+    .kpi-item span {
+        color: #114B5F;
+    }
+
+    .user-kpi-item {
+        font-weight: 700;
+        color: #114B5F;
+        border: 1px solid darkolivegreen;
+        margin: 2px;
+        padding: 3px;
+        -webkit-border-radius:;
+        -moz-border-radius:;
+        border-radius: 2px;
+    }
+
+    .user-kpi-item label {
+        color: #888;
+    }
+
+    .kpi-input b {
+        text-transform: uppercase;
+        display: block;
+        background: #114B5F;
+        color: #fff;
+        padding: 3px;
+        border-radius: 2px;
+    }
+
+    .table-bordered-cyan {
+        border: 1px solid darkcyan;
+        border-top: none;
+        border-right: none;
+    }
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+
+        <a class="navbar-brand" style="color:#028CB3" href="/company/performance/startplace/">
+            <i class="glyphicon glyphicon-home"/>
+        </a>
+        <a class="navbar-brand" style="color:#028CB3" href="{{ profile.get_url }}">{{ profile.display_name }}
+
+        </a>
+      <span class="navbar-brand pull-right" style="background: darkcyan; color:#fff; ">
+
+                    {{ profile.kpi_percent }}%</span>
+
+
+    </div>
+</nav>
+<div class="row" style="margin-top:88px;">
+
+
+    <div class="col-xs-12">
+
+
+        <div style="max-width: 768px; margin: 0 auto;">
+
+
+            <div class="">
+                <h3>
+                    <img src="{{ organization.get_logo }}" style="height: 50px;"/>
+                    {{ organization.fields.name }}</h3>
+                <div class="alert alert-warning" role="alert">
+                    <p><b>
+                        Review Deadline:</b> {{ moment(current_quarter.due_date).format('d-MMM-YYYY')}}
+                        <a target="_blank" href="/performance/schedule/">
+                            <i class="glyphicon glyphicon-edit"></i></a>
+                    </p>
+                    <p><b>
+                        Edit KPI Deadline:</b> {{ moment(organization.fields.edit_to_date).format('d-MMM-YYYY')}}
+
+                        <a target="_blank" href="/performance/basic/">
+                            <i class="glyphicon glyphicon-edit"></i></a>
+                    </p>
+                </div>
+
+
+                {{#each user_kpis:j }}
+
+
+                <div class="kpi-item">
+                    <b onclick="$('.kpi-detail').toggle(200);">
+                        <a style="color:#fff;" class="collapsex">
+                            <i class="glyphicon glyphicon-collapse-down"></i></a>
+                        <label>[{{ kpi_id }}]</label> {{ name }}</b>
+                    <div class="kpi-detail" id="kpi.{{ id }}" style="display: none;">
+                        {{#if children.length == 0 }}
+
+                        <kpinput is_child="false" kpi="{{ user_kpis[j] }}"/>
+                        {{ else }}
+                        <p>&nbsp;</p>
+
+                        {{/if}}
+                        <table class="table table-condensed table-striped" style="">
+                            <tr>
+                                <td style="width: 25px;"></td>
+                                <td></td>
+                            </tr>
+                            {{#each children:i }}
+                            <tr>
+                                <td></td>
+                                <td><b style="background: whitesmoke; color: darkcyan;">
+                                    <label>[{{ kpi_id }}]</label> {{ name }}</b></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <kpinput is_child="true" kpi="{{ children[i] }}"/>
+                                </td>
+                            </tr>
+                            {{/each }}
+                        </table>
+
+                    </div>
+                </div>
+
+                {{/each }}
+
+            </div>
+
+        </div>
+    </div>

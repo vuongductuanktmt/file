@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="88px" viewBox="0 0 97 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>to_exist_position</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Change-position" transform="translate(-115.000000, -336.000000)">
+            <g id="Group-10" transform="translate(88.000000, 318.000000)">
+                <g id="to_exist_position" transform="translate(24.000000, 19.000000)">
+                    <g id="Group-2">
+                        <ellipse id="Oval-2" stroke="#979797" fill="#D8D8D8" cx="51" cy="14.8275862" rx="15" ry="14.8275862"></ellipse>
+                        <g id="Group" transform="translate(23.000000, 49.425287) rotate(-5.000000) translate(-23.000000, -49.425287) translate(2.000000, 28.666667)">
+                            <ellipse id="Oval-2-Copy" fill="#F68D1E" cx="10" cy="31.6321839" rx="10" ry="9.88505747"></ellipse>
+                            <path d="M41.5,0.494252874 L17.4791757,24.2389757" id="Line-2" stroke="#979797" stroke-linecap="square"></path>
+                        </g>
+                        <g id="Group" transform="translate(79.000000, 49.425287) scale(-1, 1) rotate(-5.000000) translate(-79.000000, -49.425287) translate(58.000000, 28.666667)" stroke="#979797">
+                            <ellipse id="Oval-2-Copy" fill="#D8D8D8" cx="10" cy="31.6321839" rx="10" ry="9.88505747"></ellipse>
+                            <path d="M41.5,0.494252874 L17.4791757,24.2389757" id="Line-2" stroke-linecap="square"></path>
+                        </g>
+                    </g>
+                    <path d="" id="Path-3" stroke="#979797"></path>
+                    <g id="Group-3" transform="translate(20.000000, 69.195402)">
+                        <path d="M0,2.96551724 C12.2288837,21.038474 43.4103592,21.7929196 56,2.96551724" id="Path-5" stroke="#F68D1E" stroke-width="0.5"></path>
+                        <polygon id="Triangle" fill="#F68D1E" transform="translate(56.198113, 3.052009) rotate(36.000000) translate(-56.198113, -3.052009) " points="56.198113 1.07499715 58.698113 5.02902014 53.698113 5.02902014"></polygon>
+                    </g>
+                    <path d="" id="Path-4" stroke="#979797"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

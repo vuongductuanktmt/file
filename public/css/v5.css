@@ -1,0 +1,909 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=vietnamese');
+#people{
+    font-family: 'Open Sans', sans-serif;
+}
+#left-content{
+    background: #f9f9f9;
+    min-height: 661px;
+    border:1px solid #e4e4e4;;
+    border-radius: 3px;
+}
+#left-content .title{
+    color:#505050;
+    font-size:16px;
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(98deg, #f9f9f9, #e4e4e4);
+    line-height: 42px;
+    border-bottom: 1px solid #e4e4e4;
+}
+#left-content-2 .span1{
+    color:#666666;
+    font-size:14px;
+}
+#left-content-2 .span2{
+    font-size:14px;
+    color:#333333;
+}
+#left-content-2{
+    background: #f9f9f9;
+    min-height: 661px;
+    border:1px solid #e4e4e4;;
+    border-radius: 3px;
+}
+#left-content-2 .title{
+    color:#505050;
+    font-size:16px;
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(98deg, #f9f9f9, #e4e4e4);
+    line-height: 42px;
+    border-bottom: 1px solid #e4e4e4;
+}
+#left-content-2 .span1{
+    color:#666666;
+    font-size:14px;
+}
+#left-content-2 .span2 {
+    font-size: 14px;
+    color: #333333;
+}
+.content-left{
+    margin:20px 20px 0px 20px;
+}
+.content-left .infor{
+    height: 40px;
+    min-width:260px;
+}
+.content-left ul li{
+    border:none;
+    background:transparent;
+    padding:0px;
+}
+.content-left .name{
+    color: #008b8b;
+    font-weight: bold;
+    font-size:14px;
+    vertical-align: top;
+}
+.content-left .email{
+    color: #666666;
+}
+.content-left .ava{
+    width: 40px;
+    height: 40px;
+    float:left;
+    margin-right:10px;
+}
+.content-left .btn-add{
+    border-radius: 3px;
+    border: 1px dashed #979797;
+    text-align: center;
+    line-height: 39px;
+    cursor:pointer;
+}
+.content-left ol li{
+    color:#008b8b;
+    font-size:14px;
+    padding-bottom:10px;
+    font-weight: 600;
+}
+.content-left input[type='radio']:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 15px;
+    top: -3px;
+    left: -1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border:1px solid #e4e4e4;
+    margin-left:-3px;
+}
+.content-left input[type='radio']:checked:after {
+    border-radius: 15px;
+    position: relative;
+    border:7px solid #008b8b;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+#rightadd-content{
+
+}
+#right-content input[type="radio"]{
+    width:18px;
+    height: 18px;
+    margin:2px -30px 0px;
+}
+#org-chart .orgchart{
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+
+.node {
+    width: 130px;
+    height: 89px;
+    border-radius: 2px;
+    background-color: rgba(242, 117, 119, 0.2);
+    border: 1px solid rgba(242, 117, 119, 0.5);
+    margin: 5px 5px;
+}
+.node.lv2{
+    background-color: rgba(51, 122, 183, 0.2);
+    color: rgba(51, 122, 183, 0.5);
+    border: 2px solid rgba(51, 122, 183, 0.5);
+}
+.node.lv2 .content-ico{
+    font-size:20px;
+    margin-top:10px;
+    color: rgba(51, 122, 183, 0.5);
+}
+.node.lv3{
+    background-color: rgba(245, 166, 35, 0.2);
+    color: rgba(245, 166, 35, 0.5);
+    border: 2px solid rgba(245, 166, 35, 0.5);
+}
+.node.lv3 .content-ico{
+    font-size:20px;
+    margin-top:10px;
+    color: rgba(245, 166, 35, 0.5);
+}
+.node .title {
+    width: 100%;
+    height: 40px;
+    border:none;
+    background: transparent;
+    font-size: 14px;
+    color:#333333;
+    padding: 0px 5px 3px 5px;
+    line-height: 18px;
+    overflow: hidden;
+    max-height: 40px;
+}
+.node .content{
+    width: 100%;
+    height: 40px;
+    border:none;
+    background: transparent;
+    line-height: 40px;
+    vertical-align: bottom;
+}
+.node .chart-line{
+    width:127px;
+    margin: 0px;
+    padding: 0px;
+    background: #ababab;
+    opacity: 0.2;
+}
+.node .content-ico{
+    font-size:20px;
+    margin-top:10px;
+    color: rgba(242, 117, 119, 0.5);
+}
+.node .content-img{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f9f9f9;
+    margin-top:-5px;
+}
+.node .content-img-2{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f9f9f9;
+    margin-left:-15px;
+    margin-top:-5px;
+}
+.node .content-img-3{
+    width: 30px;
+    height: 30px;
+    border: 1px solid #f9f9f9;
+    margin-left:-15px;
+    border-radius:50%;
+    background-color: #d8d8d8;
+    display:inline-block;
+    vertical-align: middle;
+    line-height: 30px;
+    color: #505050;
+    font-size:12px;
+    margin-top:-5px;
+}
+#btn-views, #btn-back{
+    width: 250px;
+    background-color: #008b8b;
+    color:white;
+    text-align: center;
+    border-radius:3px;
+    border:none;
+    margin-left: 20px;
+}
+.modal-content{
+    border-radius: 3px;
+    width:450px;
+    margin-left:75px;
+    border:none;
+}
+.modal-header{
+    padding-top:20px;
+    border:none;
+    padding-bottom:5px;
+}
+.modal-title{
+    color:#333333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-footer{
+    border-top:none;
+    padding-top:0px;
+}
+.modal-body{
+    padding-bottom:0px;
+}
+.modal-footer .btn-cancel{
+    color: #333333;
+    text-align: center;
+    min-width: 70px;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+}
+.modal-footer .btn-add{
+    min-width: 70px;
+    height: 34px;
+    background-color: #008b8b;
+    color:white;
+    text-align: center;
+    border-radius:3px;
+    border:none;
+}
+.modal-footer .btn-cancel:hover{
+    border-radius: 3px;
+    border: 1px solid #e4e4e4;
+    background: #e4e4e4;
+}
+.modal-footer .btn-add:hover{
+    background-color: #007777;
+}
+/*Search in form add employees*/
+.icon-addon input{
+
+}
+.input-group .icon-addon .form-control {
+    border-radius: 0;
+}
+
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+
+.icon-addon:after,
+.icon-addon:before {
+    display: table;
+    content: " ";
+}
+
+.icon-addon:after {
+    clear: both;
+}
+
+.icon-addon.addon-md .glyphicon,
+.icon-addon .glyphicon,
+.icon-addon.addon-md .fa,
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 20px;
+    width: 20px;
+    margin-left: -2.5px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px
+}
+
+.icon-addon.addon-lg .form-control {
+    line-height: 40px;
+    height: 40px;
+    font-size: 14px;
+    padding: 10px 16px 10px 40px;
+    color:#333333;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #ababab;
+    box-shadow: none;
+}
+
+.icon-addon.addon-sm .form-control {
+    height: 30px;
+    padding: 5px 10px 5px 28px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.icon-addon.addon-lg .fa,
+.icon-addon.addon-lg .glyphicon {
+    font-size: 18px;
+    margin-left: 0;
+    left: 11px;
+    top: 0px;
+    color: #ababab;
+    font-weight: lighter;
+}
+
+.icon-addon.addon-md .form-control,
+.icon-addon .form-control {
+    padding-left: 30px;
+    float: left;
+    font-weight: normal;
+}
+
+.icon-addon.addon-sm .fa,
+.icon-addon.addon-sm .glyphicon {
+    margin-left: 0;
+    font-size: 12px;
+    left: 5px;
+    top: -1px
+}
+
+.icon-addon .form-control:focus + .glyphicon,
+.icon-addon:hover .glyphicon,
+.icon-addon .form-control:focus + .fa,
+.icon-addon:hover .fa {
+    color: #2580db;
+}
+/*List employees*/
+.well{
+    height:198px;
+    background: #fff;
+    border:none;
+    box-shadow: none;
+    overflow-y:scroll;
+    padding:0px;
+}
+.well .nav{
+
+}
+.well .name{
+    color: #333333;
+    font-weight: bold;
+    font-size:14px;
+    vertical-align: top;
+}
+.well .email{
+    color: #666666;
+    float:unset;
+}
+.well .ava{
+    width: 40px;
+    height: 40px;
+    float:left;
+    margin-right:10px;
+}
+.well .nav li{
+    padding:0px;
+    border:none;
+    height:55px;
+}
+/*Change color of radio button*/
+input[type='radio']:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 15px;
+    top: -1px;
+    left: -1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border:1px solid #e4e4e4;
+}
+input[type='radio']:checked:after {
+    border-radius: 15px;
+    position: relative;
+    border:7px solid #008b8b;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+/*Employee list*/
+#strategymap-2 table thead tr th{
+    background: #fff;
+    border:none;
+    color: #666666;
+}
+#strategymap-2 table tbody tr td{
+    line-height: 35px;
+    border:none;
+}
+#strategymap-2 .pagination li a{
+    margin-left:7px;
+    background-color: #e4e4e4;
+    border-radius: 3px;
+    color:#333333;
+    border: none;
+}
+#strategymap-2 .pagination li.active a{
+    background-color: #ababab;
+}
+.btn-btn{
+    line-height: 32px;
+    width: 40px;
+    height: 34px;
+    background-color: #fff;
+    text-align: center;
+    border-radius:3px;
+    border: solid 1px #e4e4e4;
+    color:#ababab;
+    margin-right:5px;
+}
+.btn-btn:hover{
+    background-color: #008b8b;
+    color:white;
+    border:none;
+}
+.btn2:hover{
+    background: #d9534f;
+}
+#strategymap-2{
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-search{
+    margin-top: 20px;
+    width: 403px;
+    display:inline-block;
+}
+#user-config .dropdown-menu li a i{
+    margin-right:10px;
+    font-size:16px;
+}
+#user-config .dropdown-menu li{
+    padding-top:10px;
+}
+#user-config .dropdown-menu .divider{
+    padding-top:0px;
+    margin-top:20px;
+}
+#user-config .dropdown.open button i{
+    color: #337ab7 !important;
+}
+#add-position .nav li{
+    border:none;
+    color:#008b8b;
+    text-decoration: underline;
+}
+#add-position .nav li i{
+    float:right;
+    color:#ababab;
+}
+.btn-btn2{
+    border:  1px solid #e4e4e4;
+}
+#add-employee .modal-body .form-group input{
+    height:40px;
+}
+.btn-3:hover{
+    background:black;
+}
+.btn-3:hover a{
+    color:white;
+}
+.btn-3:hover i{
+    color:white!important;
+}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=vietnamese');
+#people{
+    font-family: 'Open Sans', sans-serif;
+}
+#left-content{
+    background: #f9f9f9;
+    min-height: 661px;
+    border:1px solid #e4e4e4;;
+    border-radius: 3px;
+}
+#left-content .title{
+    color:#505050;
+    font-size:16px;
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(98deg, #f9f9f9, #e4e4e4);
+    line-height: 42px;
+    border-bottom: 1px solid #e4e4e4;
+}
+#left-content-2 .span1{
+    color:#666666;
+    font-size:14px;
+}
+#left-content-2 .span2{
+    font-size:14px;
+    color:#333333;
+}
+#left-content-2{
+    background: #f9f9f9;
+    min-height: 661px;
+    border:1px solid #e4e4e4;;
+    border-radius: 3px;
+}
+#left-content-2 .title{
+    color:#505050;
+    font-size:16px;
+    text-align: center;
+    font-weight: 600;
+    background: linear-gradient(98deg, #f9f9f9, #e4e4e4);
+    line-height: 42px;
+    border-bottom: 1px solid #e4e4e4;
+}
+#left-content-2 .span1{
+    color:#666666;
+    font-size:14px;
+}
+#left-content-2 .span2 {
+    font-size: 14px;
+    color: #333333;
+}
+.content-left{
+    margin:20px 20px 0px 20px;
+}
+.content-left .infor{
+    height: 40px;
+    min-width:260px;
+}
+.content-left ul li{
+    border:none;
+    background:transparent;
+    padding:0px;
+}
+.content-left .name{
+    color: #008b8b;
+    font-weight: bold;
+    font-size:14px;
+    vertical-align: top;
+}
+.content-left .email{
+    color: #666666;
+}
+.content-left .ava{
+    width: 40px;
+    height: 40px;
+    float:left;
+    margin-right:10px;
+}
+.content-left .btn-add{
+    border-radius: 3px;
+    border: 1px dashed #979797;
+    text-align: center;
+    line-height: 39px;
+    cursor:pointer;
+}
+.content-left ol li{
+    color:#008b8b;
+    font-size:14px;
+    padding-bottom:10px;
+    font-weight: 600;
+}
+.content-left input[type='radio']:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 15px;
+    top: -3px;
+    left: -1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border:1px solid #e4e4e4;
+    margin-left:-3px;
+}
+.content-left input[type='radio']:checked:after {
+    border-radius: 15px;
+    position: relative;
+    border:7px solid #008b8b;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+#rightadd-content{
+
+}
+#right-content input[type="radio"]{
+    width:18px;
+    height: 18px;
+    margin:2px -30px 0px;
+}
+#org-chart .orgchart{
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+}
+#btn-views, #btn-back{
+    width: 250px;
+    background-color: #008b8b;
+    color:white;
+    text-align: center;
+    border-radius:3px;
+    border:none;
+    margin-left: 20px;
+}
+.modal-content{
+    border-radius: 3px;
+    width:450px;
+    margin-left:75px;
+    border:none;
+}
+.modal-header{
+    padding-top:20px;
+    border:none;
+    padding-bottom:5px;
+}
+.modal-title{
+    color:#333333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.modal-footer{
+    border-top:none;
+    padding-top:0px;
+}
+.modal-body{
+    padding-bottom:0px;
+}
+.modal-footer .btn-cancel{
+    color: #333333;
+    text-align: center;
+    width: 70px;
+    height: 34px;
+    border-radius: 3px;
+    border: 1px solid #e4e4e4;
+    background: #fff;
+}
+.modal-footer .btn-add{
+    width: 70px;
+    height: 34px;
+    background-color: #008b8b;
+    color:white;
+    text-align: center;
+    border-radius:3px;
+    border:none;
+}
+.modal-footer .btn-cancel:hover{
+    border-radius: 3px;
+    border: 1px solid #e4e4e4;
+    background: #e4e4e4;
+}
+.modal-footer .btn-add:hover{
+    background-color: #007777;
+}
+/*Search in form add employees*/
+.icon-addon input{
+
+}
+.input-group .icon-addon .form-control {
+    border-radius: 0;
+}
+
+.icon-addon {
+    position: relative;
+    color: #555;
+    display: block;
+}
+
+.icon-addon:after,
+.icon-addon:before {
+    display: table;
+    content: " ";
+}
+
+.icon-addon:after {
+    clear: both;
+}
+
+.icon-addon.addon-md .glyphicon,
+.icon-addon .glyphicon,
+.icon-addon.addon-md .fa,
+.icon-addon .fa {
+    position: absolute;
+    z-index: 2;
+    left: 10px;
+    font-size: 20px;
+    width: 20px;
+    margin-left: -2.5px;
+    text-align: center;
+    padding: 10px 0;
+    top: 1px
+}
+
+.icon-addon.addon-lg .form-control {
+    line-height: 40px;
+    height: 40px;
+    font-size: 14px;
+    padding: 10px 16px 10px 40px;
+    color:#333333;
+    border-radius: 3px;
+    background-color: #ffffff;
+    border: 1px solid #ababab;
+    box-shadow: none;
+}
+
+.icon-addon.addon-sm .form-control {
+    height: 30px;
+    padding: 5px 10px 5px 28px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.icon-addon.addon-lg .fa,
+.icon-addon.addon-lg .glyphicon {
+    font-size: 18px;
+    margin-left: 0;
+    left: 11px;
+    top: 0px;
+    color: #ababab;
+    font-weight: lighter;
+}
+
+.icon-addon.addon-md .form-control,
+.icon-addon .form-control {
+    padding-left: 30px;
+    float: left;
+    font-weight: normal;
+}
+
+.icon-addon.addon-sm .fa,
+.icon-addon.addon-sm .glyphicon {
+    margin-left: 0;
+    font-size: 12px;
+    left: 5px;
+    top: -1px
+}
+
+.icon-addon .form-control:focus + .glyphicon,
+.icon-addon:hover .glyphicon,
+.icon-addon .form-control:focus + .fa,
+.icon-addon:hover .fa {
+    color: #2580db;
+}
+/*List employees*/
+.well{
+    height:198px;
+    background: #fff;
+    border:none;
+    box-shadow: none;
+    overflow-y:scroll;
+    padding:0px;
+}
+.well .nav{
+
+}
+.well .name{
+    color: #333333;
+    font-weight: bold;
+    font-size:14px;
+    vertical-align: top;
+}
+.well .email{
+    color: #666666;
+    float:unset;
+}
+.well .ava{
+    width: 40px;
+    height: 40px;
+    float:left;
+    margin-right:10px;
+}
+.well .nav li{
+    padding:0px;
+    border:none;
+    height:55px;
+}
+/*Change color of radio button*/
+input[type='radio']:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 15px;
+    top: -1px;
+    left: -1px;
+    position: relative;
+    background-color: #fff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border:1px solid #e4e4e4;
+}
+input[type='radio']:checked:after {
+    border-radius: 15px;
+    position: relative;
+    border:7px solid #008b8b;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+}
+/*Employee list*/
+#strategymap-2 table thead tr th{
+    background: #fff;
+    border:none;
+    color: #666666;
+}
+#strategymap-2 table tbody tr td{
+    line-height: 35px;
+    border:none;
+}
+#strategymap-2 .pagination li a{
+    margin-left:7px;
+    background-color: #e4e4e4;
+    border-radius: 3px;
+    color:#333333;
+    border: none;
+}
+#strategymap-2 .pagination li.active a{
+    background-color: #ababab;
+}
+.btn-btn{
+    line-height: 32px;
+    width: 40px;
+    height: 34px;
+    background-color: #fff;
+    text-align: center;
+    border-radius:3px;
+    border: solid 1px #e4e4e4;
+    color:#ababab;
+    margin-right:5px;
+}
+.btn-btn:hover{
+    background-color: #008b8b;
+    color:white;
+    border:none;
+}
+.btn2:hover{
+    background: #d9534f;
+}
+#strategymap-2{
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-search{
+    margin-top: 20px;
+    width: 403px;
+    display:inline-block;
+}
+#user-config .dropdown-menu li a i{
+    margin-right:10px;
+    font-size:16px;
+}
+#user-config .dropdown-menu li{
+    padding-top:10px;
+}
+#user-config .dropdown-menu .divider{
+    padding-top:0px;
+    margin-top:20px;
+}
+#user-config .dropdown.open button i{
+    color: #337ab7 !important;
+}
+#add-position .nav li{
+    border:none;
+    color:#008b8b;
+    text-decoration: underline;
+}
+#add-position .nav li i{
+    float:right;
+    color:#ababab;
+}
+.btn-btn2{
+    border:  1px solid #e4e4e4;
+}
+#add-employee .modal-body .form-group input {
+    height:40px;
+}

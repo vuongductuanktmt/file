@@ -1,0 +1,166 @@
+<style>
+    .bordering {
+        border: 1px solid #ccc;
+
+    }
+
+    .kpi-item {
+        /*margin: 3px;
+        border-bottom: 1px dashed #888;*/
+    }
+
+    .kpi-item b {
+        text-transform: uppercase;
+        display: block;
+        background: darkcyan;
+        color: #fff;
+        padding: 3px;
+        border-radius: 2px;
+    }
+
+    .kpi-item span {
+        color: darkcyan;
+    }
+
+    .user-kpi-item {
+        font-weight: 700;
+        color: darkcyan;
+        border: 1px solid darkolivegreen;
+        margin: 2px;
+        padding: 3px;
+        -webkit-border-radius:;
+        -moz-border-radius:;
+        border-radius: 2px;
+    }
+
+    .user-kpi-item label {
+        color: #888;
+    }
+</style>
+<h1 style="color:#028CB3">KPI Composer &raquo;
+    <a href="{{ profile.get_url }}">{{ profile.display_name }}</a></h1>
+<div class="row">
+    <div class="col-xs-12 ">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Search KPIs</label>
+                <p>Advanced search:
+                <code>name:Anna</code> / <code>title: HR Manager</code> / <code>department:Accounting</code> / <code>no_lib</code> / <code>only_lib</code>
+            </p>
+            <input class="form-control" id="query" placeholder="KPI Name...">
+        </div>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-xs-12 col-md-8 ">
+        <div class="bordering" style="height: 550px; overflow: auto;">
+
+            {{#each kpis:i}}
+            <div class="kpi-item">
+
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <td colspan="5"><b>
+                            {{ name }}<span>
+                            {{ id }}
+
+                            </span>
+                            <a style="float: right;" target="_blank" href="/performance/kpi-editor/2016/{{ user }}/">
+                                <span>E</span></a>
+                        </b>
+
+                        </td>
+                    </tr>
+                    <tr style="font-weight: 500; color: #888;">
+                        <td>Category</td>
+                        <!--td>Operator</td>
+                        <td>Target</td-->
+                        <td>Target</td>
+                        <td>Measurement</td>
+                        <td>Note</td>
+                        <td>Action</td>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="text-transform: capitalize;">{{ bsc_category }}</td>
+                        <td>{{ operator }} {{ target }} {{ unit }}</td>
+                        <td>{{ current_goal }}</td>
+                        <td>{{ future_goal }}</td>
+                        <td style="text-align: right;">
+
+                            <a class="add_kpi" href="javascript:void(0)" on-click="add_kpi:{{ i }}"><i
+                                    class="glyphicon glyphicon-plus"></i></a>
+
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+                {{#if children.length > 0}}
+
+                <table class="table table-condensed table-striped" style="margin-left:35px;">
+                    <thead>
+                    <tr>
+                        <td colspan="5">
+                            <strong>Children</strong>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each children:i}}
+                    <tr>
+                        <td colspan="5">{{ name }}</td>
+                    </tr>
+                    <tr style="color:#888;">
+
+                        <td style="text-transform: capitalize; padding-left:25px;">{{ bsc_category }}</td>
+                        <td>{{ operator }} {{ target }} {{ unit }}</td>
+                        <td>{{ current_goal }}</td>
+                        <td>{{ future_goal }}</td>
+                        <td style="text-align: right;">
+
+                            <a class="add_kpi" href="javascript:void(0)" on-click="add_kpi:{{ i }}"><i
+                                    class="glyphicon glyphicon-plus"></i></a>
+
+                        </td>
+
+
+                    </tr>
+                    {{ /each }}</tbody>
+                </table>
+                {{/if}}
+
+
+                <div class="clear"></div>
+            </div>
+            {{/each }}
+
+
+        </div>
+
+    </div>
+    <div class="col-xs-12 col-md-4">
+        <div class="">
+            <div class="form-group">
+                KPIs:
+            </div>
+
+
+            {{#each user_kpis }}
+            <div class="user-kpi-item">
+                <p><label>[{{ kpi_id }}]</label> {{ name }}</p>
+                <ul>
+                    {{#each children }}
+                    <li><label>[{{ kpi_id }}]</label> {{ name }}</li>
+                    {{/each }}
+                </ul>
+            </div>
+            {{/each }}
+
+        </div>
+    </div>

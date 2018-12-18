@@ -1,0 +1,76 @@
+.title-right {
+	color: #00a8a9;
+	/*color: #007eca;*/
+	line-height: 61px;
+}
+.user_info {
+	width: 400px;
+}
+.user_info img {
+	margin: 0 10px 10px 0; 
+}
+.user_info .username {
+	font-size: 16px;
+}
+.progress-status {
+	width: 260px;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 0 0 10px;
+}
+.progress-note {
+	max-width: 400px;
+	font-size: 12px;
+	padding: 10px;
+	border: 1px solid #9CB171;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.review {
+	-webkit-box-shadow: inset 0 -1px rgba(0,0,0,.16);
+	-moz-box-shadow: inset 0 -1px rgba(0,0,0,.16);
+	box-shadow: inset 0 -1px rgba(0,0,0,.16);
+	background: rgba(246,246,246,1);
+	background: -moz-linear-gradient(left, rgba(202, 175, 209, 1) 0%, rgba(246,246,246,1) 37%, rgba(237,237,237,1) 93%, rgba(237,237,237,1) 96%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(202, 175, 209, 1)), color-stop(37%, rgba(246,246,246,1)), color-stop(93%, rgba(237,237,237,1)), color-stop(96%, rgba(237,237,237,1)));
+	background: -webkit-linear-gradient(left, rgba(202, 175, 209, 1) 0%, rgba(246,246,246,1) 37%, rgba(237,237,237,1) 93%, rgba(237,237,237,1) 96%);
+	background: -o-linear-gradient(left, rgba(202, 175, 209, 1) 0%, rgba(246,246,246,1) 37%, rgba(237,237,237,1) 93%, rgba(237,237,237,1) 96%);
+	background: -ms-linear-gradient(left, rgba(202, 175, 209, 1) 0%, rgba(246,246,246,1) 37%, rgba(237,237,237,1) 93%, rgba(237,237,237,1) 96%);
+	background: linear-gradient(to right, rgba(202, 175, 209, 1) 0%, rgba(246,246,246,1) 37%, rgba(237,237,237,1) 93%, rgba(237,237,237,1) 96%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#ededed', GradientType=1 );
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	padding: 5px;
+	margin-bottom: 10px;
+}
+.review-title {
+	padding: 5px 10px;
+}
+.review-obj {
+	background-color: #fff;
+	-webkit-box-shadow: inset 0 -1px rgba(0,0,0,.16);
+	-moz-box-shadow: inset 0 -1px rgba(0,0,0,.16);
+	box-shadow: inset 0 -1px rgba(0,0,0,.16);
+	margin: 5px 10px;
+	padding: 10px;
+}
+.review-obj p {
+	font-size: 12px;
+}
+.rate-bar {
+	font-size: 11px;
+}
+.review-obj textarea {
+	width: 630px;
+	height: 60px;
+	resize: none;
+	font-size: 12px;
+}
+.complete_text {
+	position: absolute;
+	margin-left: 19em;
+	font-size: 12px;
+	font-weight: bold;
+}

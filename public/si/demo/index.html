@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="http://88.cjs.vn/cloudjet.ico"/>
+    <title>Cloudjet KPI - System Integration Demo</title>
+    <link rel="stylesheet" href="files/css/fontawesome-all.min.css" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+
+
+        *, *:before, *:after {
+            box-sizing: border-box;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-feature-settings: "liga", "kern";
+            font-feature-settings: "liga", "kern";
+            overflow-y: scroll;
+            overflow-x: hidden;
+            height: 100%;
+            background: linear-gradient(210deg, #9adbbe, #4fc08d);
+        }
+
+        body {
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Source Sans Pro", sans-serif;
+        }
+
+        button {
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: inherit;
+            font-family: inherit;
+            font-weight: inherit;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .app {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 1em;
+            background: #fff;
+            overflow: hidden;
+            box-shadow: 0 0 5px rgba(25, 25, 25, 0.25);
+        }
+
+        .btn {
+            font-size: 14px;
+            margin: 0 .5em;
+            border-radius: 2em;
+            padding: 0.75em 1.5em;
+            cursor: pointer;
+            background: none;
+            color: #2d7c58;
+            border: 1px solid;
+            letter-spacing: 1px;
+            font-family: "Source Sans Pro", sans-serif;
+            color: #4fc08d;
+            border: #4fc08d 1px solid;
+            transition: 250ms ease-out;
+        }
+
+        .btn:hover, .btn:focus {
+            color: #fff;
+            background: #4fc08d;
+        }
+
+        .form {
+            width: 100%;
+            padding: 1.5rem 1rem 0 1rem;
+            display: flex;
+        }
+
+        .form__input {
+            width: 100%;
+            font-size: 14px;
+            margin: 0 .5em;
+            border-radius: 2em;
+            padding: 0.75em 1.5em;
+            background: none;
+            font-family: "Source Sans Pro", sans-serif;
+            border: #e3e3e3 1px solid;
+            transition: border 250ms ease-out;
+        }
+
+        .form__input:focus {
+            border: #4fc08d 1px solid;
+            outline: none;
+        }
+
+        .todo-list {
+            width: 100%;
+            padding: 0 1rem;
+            flex: 1;
+
+            overflow: auto;
+        }
+
+        .todo-list__item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .5em;
+            margin-bottom: .5em;
+            border-radius: 3px;
+            transition: 200ms;
+            color: #4fc08d;
+        }
+
+        .todo-list__item:last-child {
+            margin-bottom: 0;
+        }
+
+        .todo-list__item.complete {
+            color: lightgreen;
+        }
+
+        .todo-list__item.complete .todo-list__item-content:after {
+            background: lightgreen;
+        }
+
+        .todo-list__item-content {
+            position: relative;
+            text-align: left;
+        }
+
+        .todo-list__item-content:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #4fc08d;
+            transition: 250ms ease-out;
+            -webkit-transform-origin: center;
+            transform-origin: center;
+            -webkit-transform: scalex(0);
+            transform: scalex(0);
+        }
+
+        .todo-list__item-content:hover:after, .todo-list__item-content:focus:after {
+            -webkit-transform: scalex(1);
+            transform: scalex(1);
+        }
+
+        .todo-list__item-remove {
+            margin-left: .5em;
+            background: none;
+
+            color: inherit;
+            padding: 0;
+            line-height: 1;
+            width: 2em;
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 80%;
+        }
+
+        .todo-list__item-feel {
+            /*  margin-left: .5em;*/
+            background: none;
+
+            color: inherit;
+            padding: 0;
+            line-height: 1;
+            width: 2em;
+            height: 2em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 80%;
+        }
+
+        .todo-list__item-remove, .todo-list__item-feel i {
+            /*font-size: 18px;*/
+        }
+
+        .filters {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            padding: 0 1rem 1.5rem 1rem;
+        }
+
+        .list-move,
+        .list-leave-active,
+        .list-enter-active {
+            transition: 500ms cubic-bezier(0.87, -0.41, 0.19, 1.44);
+        }
+
+        .list-enter,
+        .list-leave-active {
+            -webkit-transform: translate(100%, 0);
+            transform: translate(100%, 0);
+            opacity: 0;
+        }
+
+        .todo-div, .form-extend {
+            max-height: 200px;
+            overflow: auto;
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .form-extend {
+            padding: 0 35px;
+            color: #4fc08d;
+        }
+        .stats {
+            width: 100%;
+            padding: 1.5rem 1rem 0 1rem;
+            display: flex;
+            color: #0f7864;
+        }
+
+        .stats table {
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+
+        .stats th {
+            height: 50px;
+        }
+
+        .stats td {
+
+            vertical-align: bottom;
+        }
+
+        .stats th, .stats td {
+            padding: 15px;
+            text-align: left;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        /*
+                .stats tr:hover {
+                    background-color: #f5f5f5;
+                }
+
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }*/
+
+        .avatar {
+
+            /* make a square container */
+            width: 68px;
+            height: 68px;
+
+            /* fill the container, preserving aspect ratio, and cropping to fit */
+            background-size: cover;
+
+            /* center the image vertically and horizontally */
+            background-position: top center;
+
+            /* round the edges to a circle with border radius 1/2 container size */
+            border-radius: 50%;
+            margin-bottom: 10px;
+
+        }
+
+        #tiendung {
+            /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+            background-image: url('files/images/tiendung.jpg');
+
+        }
+
+        #toctien {
+            /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+            background-image: url('files/images/toctien.jpg');
+
+        }
+
+        #tuanhung {
+            /* This image is 687 wide by 1024 tall, similar to your aspect ratio */
+            background-image: url('files/images/tuanhung.jpg');
+
+        }
+
+        .avatar_box {
+            width: 33%;
+            text-align: center;
+            color: #00a8c3;
+            opacity: 0.2;
+        }
+
+        .avatar_active {
+            opacity: 1;
+        }
+
+        .red_face {
+            color: saddlebrown;
+        }
+
+
+    </style>
+
+    <script>
+        window.console = window.console || function (t) {
+        };
+    </script>
+    <style>.ad {
+        display: none !important;
+    }</style>
+
+
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+
+
+</head>
+
+<body translate="no">
+<div class="app" id="app">
+
+    <div class="stats">
+
+        <table style="">
+            <tr>
+                <td class="avatar_box" v-bind:class="{ avatar_active: user_selected == 'tiendung' }">
+                    <button v-on:click="select_user('tiendung')">
+                        <div id="tiendung" class="avatar"></div>
+
+                        Tiến Dũng
+                    </button>
+                </td>
+                <td class="avatar_box" v-bind:class="{ avatar_active: user_selected == 'toctien' }">
+                    <button v-on:click="select_user('toctien')">
+                        <div id="toctien" class="avatar"></div>
+                        Tóc Tiên
+                    </button>
+
+                </td>
+                <td class="avatar_box" v-bind:class="{ avatar_active: user_selected == 'tuanhung' }">
+                    <button v-on:click="select_user('tuanhung')">
+                        <div id="tuanhung" class="avatar"></div>
+                        Tuấn Hưng
+                    </button>
+                </td>
+
+            </tr>
+
+
+            <tr>
+                <td colspan="2">
+                    <button v-on:click="promt_url(user_selected, 'kpi_1')">
+                        <i class="fas fa-plug"></i></button>
+                   KPI 1: Tỉ lệ hoàn thành công việc
+                </td>
+                <td>{{ todos[user_selected+ "_kpis"]['kpi_1_percentage']/100 | percentage }}
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button v-on:click="promt_url(user_selected, 'kpi_2')">
+                        <i class="fas fa-plug"></i></button>
+                    KPI 2: Tỉ lệ hài lòng
+                </td>
+                <td> {{ todos[user_selected+ "_kpis"]['kpi_2_percentage']/100 | percentage }}
+
+                </td>
+            </tr>
+
+        </table>
+
+
+    </div>
+
+    <form class="form" v-on:submit="addTodo">
+        <input class="input form__input" v-model="inputVal"/>
+        <button class="btn form__submit-btn" type="submit">Thêm</button>
+    </form>
+    <div class="todo-div">
+        <table name="list" class="todo-list">
+            <tr
+                    class="todo-list__item"
+                    v-bind:class="{ complete: todo.complete }"
+                    v-bind:key="index"
+                    v-for="(todo, index) in filteredTodos">
+                <td style="width: 100%">
+                    <button
+                            class="todo-list__item-content"
+                            v-on:click="toggleTodo(todo)">
+                        {{ todo.text }}
+                    </button>
+                </td>
+                <td style="width: 30px">
+                    <button
+                            class=" todo-list__item-remove"
+                            v-on:click="deleteTodo(index)">
+                        <i class="fa" v-bind:class="[todo.complete ? 'fa-check' : 'fa-times']"></i>
+                    </button>
+                </td>
+                <td style="width: 30px">
+                    <button
+                            class=" todo-list__item-feel"
+                            v-on:click="toggleHappy(index)"
+                            v-bind:class="[todo.happy == true ? 'green_face': 'red_face' ]">
+                        <i class="fa"
+                           v-bind:class="[todo.happy == null ? 'fa-question-circle': todo.happy == true ? 'fa-smile': 'fa-frown' ]">
+
+
+                        </i>
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="form-extend"><label for="">Chọn tháng:</label>
+        <select name="month" id="" v-model="month">
+            <option value="1">Tháng 1</option>
+            <option value="2">Tháng 2</option>
+            <option value="3">Tháng 3</option>
+            <option value="4">Tháng 4</option>
+            <option value="5">Tháng 5</option>
+            <option value="6">Tháng 6</option>
+            <option value="7">Tháng 7</option>
+            <option value="8">Tháng 8</option>
+            <option value="9">Tháng 9</option>
+            <option value="10">Tháng 10</option>
+            <option value="11">Tháng 11</option>
+            <option value="12">Tháng 12</option>
+        </select><br><br>
+        <label for="">Nhập Token:</label>
+        <input type="text" v-model="todos['token']" @change="add_token">
+        <small style="color:red" v-if="!todos['token'] && submit">Không thể bỏ trống token</small>
+    </div>
+    <div class="filters">
+        <button
+                class="btn filters__btn filters__btn--all"
+                v-on:click="filterTodos('all')">
+            Tất cả
+        </button>
+        <button
+                class="btn filters__btn filters__btn--complete"
+                v-on:click="filterTodos('complete')">
+            Hoàn thành
+        </button>
+        <button
+                class="btn filters__btn filters__btn--incomplete"
+                v-on:click="push_kpi(user_selected)">
+            Sync KPI
+        </button>
+        <!--button
+                class="btn filters__btn filters__btn--incomplete"
+                v-on:click="filterTodos('incomplete')">
+            Chưa hoàn thành
+        </button-->
+
+
+    </div>
+    <div style="float: right; margin:10px;">
+        <a style="text-align: right; text-decoration: none; color: grey" target="_blank"
+           href="https://cloudjet.atlassian.net/wiki/spaces/PM/pages/184778814/System+Integration+Demo">
+            docs
+        </a></div>
+
+</div>
+
+<script src="files/vue.js"></script>
+
+
+<script>
+    var filters = {
+        all: function (todos) {
+            return todos;
+        },
+        complete: function (todos) {
+            return todos.filter(function (todo) {
+                return todo.complete;
+            });
+        },
+        incomplete: function (todos) {
+            return todos.filter(function (todo) {
+                return !todo.complete;
+            });
+        }
+    };
+
+    var STORAGE_KEY = 'vue-js-todos-v13';
+    var todoStorage = {
+        fetch: function () {
+            var default_todos = {
+                'tiendung': [],
+                'tuanhung': [],
+                'toctien': [],
+                'tiendung_kpis':
+
+                    {
+                        'kpi_1': 'http://v.cloudjetkpi.com/api/v2/kpi',
+                        'kpi_2': 'http://v.cloudjetkpi.com/api/v2/kpi',
+                        'kpi_1_percentage': 0,
+                        'kpi_2_percentage': 0
+                    },
+                'tuanhung_kpis': {
+                    'kpi_1': 'http://v.cloudjetkpi.com/api/v2/kpi',
+                    'kpi_2': 'http://v.cloudjetkpi.com/api/v2/kpi',
+                    'kpi_1_percentage': 0,
+                    'kpi_2_percentage': 0
+                },
+                'toctien_kpis': {
+                    'kpi_1': 'http://v.cloudjetkpi.com/api/v2/kpi',
+                    'kpi_2': 'http://v.cloudjetkpi.com/api/v2/kpi',
+                    'kpi_1_percentage': 0,
+                    'kpi_2_percentage': 0
+                },
+                'token': '',
+            };
+            var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || JSON.stringify(default_todos));
+            return todos;
+        },
+        save: function (todos) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+        }
+    };
+
+    /**
+     * Vue filter to convert the given value to percent.
+     * http://jsfiddle.net/bryan_k/qauf3qyh/
+     *
+     * @param {String} value    The value string.
+     * @param {Number} decimals The number of decimal places.
+     */
+    Vue.filter('percentage', function (value, decimals) {
+        if (!value) {
+            value = 0;
+        }
+
+        if (!decimals) {
+            decimals = 0;
+        }
+
+        value = value * 100;
+        value = Math.round(value * Math.pow(10, decimals)) / Math.pow(10, decimals);
+        value = value + '%';
+        return value;
+    });
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+            inputVal: '',
+            todos: todoStorage.fetch(),
+            user_selected: 'tiendung',
+            visibility: 'all',
+            month: 1,
+            submit: false,
+
+        },
+        watch: {
+            todos: {
+                handler: function (todos) {
+                    todoStorage.save(todos);
+                }
+            }
+        },
+        computed: {
+            filteredTodos: function () {
+                return filters[this.visibility](this.todos[this.user_selected]);
+            }
+        },
+        mounted: function () {
+            this.update_store();
+        },
+        methods: {
+
+            select_user: function (user) {
+                this.user_selected = user;
+            },
+            post_score: function (url, data) {
+                if (url == 'http://v.cloudjetkpi.com/api/v2/kpi'){
+                    console.error('wrong url:' + url)
+                    return;
+                }
+
+                $.ajax({
+                    type: 'post',
+                    url: url,
+                    data: JSON.stringify(data),
+                    success: function (data) {
+                        data['data'].forEach(function (item) {
+                            alert('Cập nhật điểm "' + item.name + '" thành công')
+                        })
+                    },
+                    error: function () {
+                        alert('Cập nhật điểm thất bại')
+                    }
+                })
+            },
+            update_store: function () {
+
+
+                //this to trigger change & watchers
+                //https://vuejs.org/v2/guide/reactivity.html
+                this.todos = Object.assign({}, this.todos, this.todos);
+
+
+                this.todos['tiendung_kpis']['kpi_1_percentage'] = 100 * this.todos['tiendung'].filter(function (todo) {
+                    return todo['complete'] == true
+                }).length / this.todos['tiendung'].length;
+                this.todos['toctien_kpis']['kpi_1_percentage'] = 100 * this.todos['toctien'].filter(function (todo) {
+                    return todo['complete'] == true
+                }).length / this.todos['toctien'].length;
+                this.todos['tuanhung_kpis']['kpi_1_percentage'] = 100 * this.todos['tuanhung'].filter(function (todo) {
+                    return todo['complete'] == true
+                }).length / this.todos['tuanhung'].length;
+
+                this.todos['tiendung_kpis']['kpi_2_percentage'] = 100 * this.todos['tiendung'].filter(function (todo) {
+                    return todo['happy'] == true
+                }).length / this.todos['tiendung'].length;
+                this.todos['toctien_kpis']['kpi_2_percentage'] = 100 * this.todos['toctien'].filter(function (todo) {
+                    return todo['happy'] == true
+                }).length / this.todos['toctien'].length;
+                this.todos['tuanhung_kpis']['kpi_2_percentage'] = 100 * this.todos['tuanhung'].filter(function (todo) {
+                    return todo['happy'] == true
+                }).length / this.todos['tuanhung'].length;
+            },
+            promt_url: function (user, key) {
+                var url = prompt("Please enter API Endpoint", this.todos[user + "_kpis"][key]);
+                if (url != null) {
+                    this.todos[user + "_kpis"][key] = url;
+                }
+                //alert(this.todos[user + "_kpis"][key]);
+
+
+                this.update_store();
+            },
+            addTodo: function (e) {
+                e.preventDefault();
+                //  console.debug('here');
+                if (this.inputVal) {
+                    this.todos[this.user_selected].push({
+                        text: this.inputVal,
+                        complete: false,
+                        happy: null
+                    });
+
+                    this.update_store();
+
+
+                }
+                this.inputVal = '';
+            },
+            toggleTodo: function (todo) {
+                todo.complete = !todo.complete;
+
+                this.update_store();
+            },
+            filterTodos: function (filter) {
+                this.visibility = filter;
+            },
+            deleteTodo: function (index) {
+                this.todos[this.user_selected].splice(index, 1);
+
+                this.update_store();
+            },
+            toggleHappy: function (index) {
+                this.todos[this.user_selected][index].happy = !this.todos[this.user_selected][index].happy;
+
+                this.update_store();
+            },
+            get_data_async: function (user_kpi, type_kpi) {
+                return {
+                    "score": {
+                        "value": this.todos[user_kpi][type_kpi + '_percentage'].toFixed(2),
+                        "month": this.month
+                    },
+                    "token": this.todos['token']
+                };
+            },
+            push_kpi: function (user_kpi) {
+                this.submit = true;
+                if(this.todos['token']){
+                    for (var i = 1; i <= 2; i++) {
+                        var type_kpi = 'kpi_' + i;
+                        this.post_score(this.todos[user_kpi + '_kpis'][type_kpi], this.get_data_async(user_kpi + '_kpis', type_kpi));
+                    }
+                }else {
+                    alert('Vui lòng nhập token');
+                }
+            },
+            add_token: function () {
+                this.todos = Object.assign({}, this.todos, this.todos);
+            }
+        }
+    });
+
+
+</script>
+
+
+</body>
+</html>

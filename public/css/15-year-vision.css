@@ -1,0 +1,63 @@
+body{
+    font-family: 'lato', sans-serif;
+    font-size: 14pt;
+    color: #262626;
+}
+@media (min-width: 768px){
+    .group-box{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+}
+#vision-15{
+    background-image: url({{STATIC_URL}}/img/15-vision-background.png);
+    background-color: #e6f5fb;
+    background-size: inherit;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+#big-title{
+    font-size: 30pt;
+    color: #038cb4;
+    display: inline-block;
+    margin-top: 50px;
+    text-align: center;
+    border-bottom: 1px #038cb4 solid;
+}
+#year-title{
+    font-size: 70pt;
+    color: #038cb4;
+    display: inline-block;
+    text-align: center;
+}
+.group-title{
+    color: #fff;
+    background-color: #40b8df;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-top: 50px;
+    padding: 5px 20px;
+    border: 1px #038cb4 solid;
+}
+.group-body{
+    background-color: rgba(225, 225, 225, 0.3);
+    border: 1px #8acbde solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top: none;
+    margin-bottom: 20px;
+}
+.input-box{
+    padding: 10px 20px;
+    padding-bottom: 0px;
+}
+.input-title{
+    color: #038cb4;
+}
+.input-width{
+    color: #484848;
+    font-size: 13pt;
+    padding: 5px 10px;
+    width: 100%;
+    border: 1px #ade7fb solid;
+}

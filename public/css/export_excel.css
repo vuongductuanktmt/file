@@ -1,0 +1,732 @@
+/*[START]------------performance/templates/report/report-score-excel∂∂.html------------[START]*/
+body, .page {
+    overflow-x: hidden;
+    background-color: #f9f9f9 !important;
+}
+
+#emp-score-page .table {
+    width: 120%;
+    max-width: 120%;
+}
+
+.processing {
+    text-align: center;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+    to {
+        transform: scale(1) rotate(360deg);
+    }
+}
+
+body {
+    padding: 10px;
+}
+
+.email-style {
+    color: #999EA0;
+}
+
+.report-head-box .checkbox-inline {
+    float: left;
+    font-size: 14px;
+    padding-top: 8px;
+}
+
+.input_data_first {
+    height: 40px;
+}
+
+.pd-top-15{
+    padding-top: 15px;
+}
+.report-head-box .right {
+    float: right;
+    margin: 0 5px;
+}
+
+.easyPieChart {
+    position: relative;
+    text-align: center;
+}
+
+.easyPieChart canvas {
+    position: absolute;
+    top: 2px;
+    left: 0;
+}
+
+.loading .text-success p {
+    margin-bottom: 0 !important;
+    font-weight: bold
+}
+
+.loading {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 130%;
+    color: #008b8b;
+}
+
+#content {
+    margin-top: 0px !important;
+}
+#container{
+    background: none!important;
+}
+.el-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    height: 100%;
+    padding: 0 !important;
+    margin: 0 5px;
+}
+
+.lb_select_quarter {
+    max-width: 130px;
+}
+
+.checkbox_search_emp {
+    max-width: 310px;
+}
+
+.el-main {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    padding-bottom: 20px;
+    margin-top: 15px;
+
+}
+
+.view_kpis_delay {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.view_kpis_delay label {
+    margin-bottom: 0;
+}
+
+#emp-score-page .input_data_first .input_quarter label {
+    line-height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#emp-score-page .input_data_first .input_emp label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#emp-score-page .input_data_first .input_quarter select, #emp-score-page .input_data_first .input_emp input {
+    height: 40px !important;
+}
+
+#emp-score-page .input_data_first .input_emp_score {
+    height: 45px;
+}
+
+#emp-score-page .input_data_first .input_emp #input_input_emp, #emp-score-page .input_data_first .input_emp .row {
+    margin-top: 10px;
+}
+
+#emp-score-page .input_data_first .input_emp .el-checkbox {
+    line-height: 40px;
+}
+
+#emp-score-page .view_page .el-tabs__nav .el-tabs__item {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#emp-score-page .view_page .view_kpis_delay, .view_page .month_report_statistic {
+    height: 50px;
+    background-color: #f0f0f0;
+}
+
+#emp-score-page .view_page .view_kpis_delay .el-checkbox {
+    line-height: 50px;
+    padding-left: 16px;
+}
+
+.reload_data {
+    margin: 10px 0;
+}
+
+.reload_data label {
+    color: #337ab7!important;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 30px;
+    padding-right: 20px;
+}
+
+@media only screen and (min-width: 992px) {
+    .view_kpis_delay .button-download {
+        margin-top: 9px;
+        margin-right: 15px;
+        right: 0;
+        position: absolute;
+        font-weight: normal;
+    }
+
+    .month_report_statistic .button-download {
+        margin-right: 4px;
+    }
+
+    body, .page {
+        overflow-y: hidden;
+    }
+
+    .el-header {
+        padding: 15px !important;
+    }
+
+    .month_report_statistic .input_filter .el-row {
+        position: absolute;
+        right: 16px;
+    }
+}
+
+.el-header {
+    height: auto !important;
+}
+
+.el-main {
+    padding: 0 !important;
+    margin: 15px 5px;
+}
+
+.el-tabs__header {
+    margin-bottom: 0 !important;
+}
+
+.lb_select_filter label {
+    font-weight: normal;
+}
+
+div[id^='modalFilter'] .modal-dialog {
+    max-width: 420px;
+}
+
+.chart_loading_user {
+    color: #008b8b;
+    font-weight: bold;
+    line-height: 50px !important;
+    padding-left: 8px;
+    position: absolute;
+    right: 16px;
+}
+
+tr.el-table__row td {
+    padding: 2px 0 2px 0 !important
+}
+
+.right .text-chart {
+    font-size: 12px;
+    line-height: 50px;
+    margin-top: 0 !important;
+    color: #008b8b;
+}
+
+.el-tabs--top .el-tabs__item.is-top:nth-child(2) {
+    padding-left: 20px !important;
+}
+
+.el-tabs--top .el-tabs__item.is-top:last-child {
+    padding-right: 20px !important;
+}
+
+.el-tabs__active-bar {
+    display: none;
+}
+
+.el-tabs__nav-scroll div.el-tabs__item {
+    border-bottom-color: #fff;
+    color: #fff;
+    transition: border-color 2s ease-out, color 0s ease-in;
+}
+
+.el-tabs__nav-scroll div.is-active {
+    border-bottom: 2px solid #008b8b;
+    color: #008b8b;
+}
+
+.el-checkbox__label, label {
+    color: #333333 !important;
+    font-weight: normal !important;
+}
+
+.view_page .el-checkbox__label {
+    font-weight: normal !important;
+}
+
+#pane-third .choose_filter {
+    padding-bottom: 10px !important;
+}
+
+#pane-third .choose_unit {
+    padding-bottom: 15px !important;
+}
+
+@media only screen and (max-width: 992px) {
+    .reload_data .el-col-sm-24 {
+        margin-top: 60px;
+    }
+
+    .el-header {
+        min-height: 220px !important;
+    }
+
+    .input_data_first {
+        padding: 5px 15px 0px 15px;
+    }
+
+    .reload_data .el-col {
+        margin-bottom: 15px !important;
+    }
+
+    .download_1 {
+        margin: 10px 5px;
+    }
+}
+
+.month_report_statistic .input_month {
+    padding: 5px 0;
+}
+
+.input_month, .month_report_statistic .input_filter {
+    padding: 9px 0;
+}
+
+.month_report_statistic .input_month label, .month_report_statistic .input_filter label {
+    padding-left: 17px;
+    color: #666666;
+    font-weight: normal;
+}
+
+thead th {
+    vertical-align: top !important;
+}
+
+div[id^='modalFilter'] .modal-body label {
+    line-height: 40px;
+}
+
+div[id^='modalFilter'] .modal-body .el-select, .input_data_first .el-select, div[id^='modalCreateFilter'] .el-autocomplete, div[id^='modalCreateFilter'] .modal-body .el-select {
+    width: 100%;
+}
+
+div[id^='modalCreateFilter'] .right, div[id^='modalCreateFilter'] .left {
+    padding: 15px;
+}
+
+div[id^='modalCreateFilter'] .right {
+    background: #f9f9f9;
+}
+
+.add_filter_bt, .create_filter_btn, .close_btn, .save_unit_btn {
+    max-height: 34px;
+    min-height: 34px;
+    padding: 4px 16px !important;
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.not_bold {
+    font-weight: normal !important;
+}
+
+.modal-footer {
+    border-top: none !important;
+}
+
+.alert-success .close {
+    display: none;
+}
+
+.alert-success:hover .close {
+    display: block;
+}
+
+div[id^='modalCreateFilter']
+.add_unit_btn {
+    border-radius: 6px;
+    border: dashed 1px #e4e4e4;
+}
+
+div[id^='modalCreateFilter'] .el-row {
+    margin-bottom: 15px;
+
+}
+
+.extend_info {
+    font-size: 12px;
+    color: #333333;
+}
+
+.avatar img {
+    width: 40px !important;
+    height: 40px !important;
+}
+
+.row-avatar {
+    width: 45px !important;
+}
+
+.info_user {
+    line-height: 15px;
+    padding-left: 5px;
+}
+
+.el-form-item__label {
+    line-height: 0 !important;
+}
+
+div[id^='modalCreateFilter'] .left .el-form-item, div[id^='modalCreateFilter'] .full_modal .el-form-item {
+    margin-bottom: 0 !important;
+}
+
+div[id^='modalCreateFilter'] .right .el-row {
+    margin-bottom: 0 !important;
+}
+
+div[id^='modalCreateFilter'] div.modal-dialog {
+    -webkit-transition: max-width 0.1s !important;
+    transition: max-width 0.1s !important;
+}
+
+.autocomplete_search_manager .el-scrollbar .el-row, .select_search_user_rm .el-scrollbar .el-select-dropdown__item .el-row {
+    padding: 10px 0 0 0;
+}
+
+.select_search_user_rm .el-scrollbar .el-select-dropdown__item {
+    height: 61px;
+}
+
+.list_unit .alert {
+    background: #f9f9f9;
+    margin: 10px 0;
+    position: relative;
+    border-radius: 6px;
+    border: none;
+}
+
+.list_unit .alert:hover {
+    background: rgba(128, 198, 198, 0.12);
+}
+
+.list_unit .title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #505050;
+}
+
+.list_unit .alert p {
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list_unit .manager_unit, .list_unit .user_unit_rm {
+    font-size: 11px;
+    font-weight: normal;
+    color: #ababab;
+}
+
+.alert a.close {
+    font-size: 20px;
+    position: absolute;
+    top: 33%;
+    right: 16px;
+    color: #ababab;
+}
+
+.modal-header .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+}
+
+.add_unit_btn {
+    height: 40px !important;
+}
+
+.add_unit_btn button {
+    padding: 5px !important;
+}
+
+.alert a.close:focus, .alert a.close:hover {
+    color: #d9534f;
+}
+
+div[id^='modalCreateFilter'] label {
+    font-weight: normal;
+    font-size: 14px;
+    color: #606266;
+}
+
+.add_unit_box .group_unit .el-form-item__content .el-input, .add_unit_box_ .group_unit .el-form-item__content .el-input {
+    display: none !important;
+}
+
+.el-form-item__label {
+    line-height: 0;
+}
+
+.list_unit_one_row {
+    margin-top: 0 !important;
+}
+.list_unit {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    height: 188px;
+    overflow: auto;
+    margin-top: 20px !important;
+}
+
+.add_unit_box, .add_unit_box .el-form-item {
+    margin-bottom: 0 !important;
+}
+
+.el-loading-mask {
+    z-index: 1000!important;
+}
+
+.add_unit_btn:hover {
+    background-color: #f9f9f9;
+}
+
+#pane-third .el-row {
+    margin: 8px;
+}
+
+#pane-third .el-select {
+    width: 100%;
+}
+
+.icon-delete {
+    color: #666666 !important;
+    font-size: 15px !important;
+    line-height: 10px !important;
+}
+
+.input_select_filter .el-select-dropdown__item {
+    padding-right: 0 !important;
+}
+
+.icon-delete:hover {
+    color: #d9534f !important;
+}
+
+.input_select_filter .icon-delete {
+    padding: 2px 10px;
+}
+.el-select-dropdown__item span{
+        line-height: 40px !important;
+}
+.emp-score-page .material-icons{
+    font-size: 20px!important;
+}
+.view-kpi-btn {
+    border-color: #008b8b !important;
+    color: #008b8b !important;
+}
+
+.view-kpi-btn:hover {
+    background: #008b8b !important;
+    color: #fff !important;
+}
+
+.el-autocomplete {
+    width: 100%;
+}
+
+.el-tabs__item:focus.is-active.is-focus:not(:active) {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.el-tabs__nav div:not(.is-active) {
+    color: #ababab;
+}
+
+.el-table .cell {
+    word-break: normal !important;
+    color: #505050;
+}
+
+.group_name_tb {
+    line-height: 15px !important;
+}
+
+.center_lb {
+    line-height: 40px;
+}
+
+.el-table thead.is-group th {
+    background: #fff !important;
+}
+
+#pane-third {
+    margin-top: 20px !important;
+    padding: 0 7px;
+}
+
+.btn_export_excel_3 {
+    margin-bottom: 20px !important;
+}
+
+#launcher {
+    display: none !important;
+}
+
+.el-table_1_column_1 .cell {
+    margin-top: 4px;
+}
+
+.add_unit_btn button {
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+div[id^='modalCreateFilter'] .modal-body > .el-row {
+    margin-right: 0.5px !important;
+    margin-bottom: 0 !important;
+}
+
+div[id^='modalCreateFilter'] .modal-body, div[id^='modalCreateFilter'] .modal-body .left {
+    padding-bottom: 0 !important;
+}
+
+div[id^='modalCreateFilter'] .modal-body .right {
+    padding-bottom: 18px !important;
+}
+
+div[id^='modalCreateFilter'] .modal-body .left {
+    padding-right: 15px !important;
+}
+
+#pane-third .center_lb {
+    max-width: 100px !important;
+}
+
+.el-form-item.is-success .el-input__inner, .el-form-item.is-success .el-input__inner:focus, .el-form-item.is-success .el-textarea__inner, .el-form-item.is-success .el-textarea__inner:focus {
+    border-color: #008b8b !important;
+}
+
+.add_unit_box_ {
+    margin-top: 15px !important;
+}
+
+.alert_first {
+    margin-top: 0 !important;
+}
+
+.list_unit_one_row {
+    margin-bottom: 15px;
+}
+div[id^='modalCreateFilter'] .left{
+    padding-top: 0;
+}
+.vue-easy-pie-chart {
+  position: relative;
+  text-align: center;
+}
+.vue-easy-pie-chart .inner-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  display: block;
+}
+
+.el-table_1_column_1 .cell{
+    margin-left: 10px;
+}
+
+.hover-icon-bin .icon-delete {
+    display: none;
+}
+
+.hover-icon-bin:hover .icon-delete{
+    display: block;
+}
+
+.el-table__row .view-kpi-btn{
+    display: none;
+}
+
+.hover-row .view-kpi-btn{
+    display: block;
+}
+.el-table_1_column_13  .cell a:hover{
+    text-decoration: none!important;
+}
+
+.el-scrollbar .el-autocomplete-suggestion__wrap ul li {
+    padding: 0px 10px!important;
+}
+
+.el-scrollbar .el-autocomplete-suggestion__wrap .row-avatar .avatar{
+    padding-top: 10px;
+    padding-right: 5px;
+}
+.custom-el-select{
+    max-width: 225px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.text-ellipsis{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.button-select-filter{
+    max-width: 300px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.el-tooltip__popper.is-dark{
+    max-width:300px;
+}
+
+.autocomplete_search_manager .el-select-dropdown__item{
+    min-height:60px;
+}
+
+.el-progress--circle .el-progress__text{
+    font-weight:bold;
+    font-size: 12px!important;
+    color:black;
+}
+.white-space-pre{
+    white-space: pre;
+}
+.el-table--small{
+    height: calc(100vh - 250px)!important;
+}
+/*[END]------------performance/templates/report/report-score-excel.html------------[END]*/

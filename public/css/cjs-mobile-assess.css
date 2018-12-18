@@ -1,0 +1,100 @@
+#cjs-mb-as{
+    font-family: "LatoWebMedium";
+    text-align: center;
+    font-size: 14px;
+}
+.cjs-message{
+    margin-top: 5px;
+}
+.message-box{
+    overflow: scroll;
+    max-width: 800px;
+    padding-bottom: 15px;
+    overflow-x: hidden;
+}
+.cjs-ctn{
+    text-align: left;
+    max-width: 70% !important;
+    float: left;
+    color: #2c2c2c;
+    background-color: #ebebeb;
+    display: inline-block;
+    padding: 5px 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 5px;
+}
+.cjs-avatar{
+    float: left;
+}
+
+.user-message{
+    margin-top: 5px;
+}
+.user-ctn{
+    text-align: right;
+    max-width: 70% !important;
+    float: right;
+    color: #fff;
+    background-color: #007cb0;
+    display: inline-block;
+    padding: 5px 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 5px;
+}
+
+.cjs-mes-time{
+    color: #515151;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.ms-text-input{
+    text-align:center;
+    height: 49px;
+    border-top: 1px #ccc solid;
+}
+.ms-input-margin{
+    margin-right: 100px;
+}
+.ms-input{
+    margin-top: 4px;
+    padding-right: 200px;
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    padding: 10px;
+}
+.ms-input-margin input:focus{
+    outline: 0px !important;
+}
+.import-button{
+    border-radius: 3px;
+    margin-top: 6px;
+    cursor: pointer;
+    padding: 8px 10px;
+    float: right;
+    background-color: #007cb0;
+    color: #fff;
+    font-family: LatoWebBlack;
+    transition: background 0.3s;
+}
+.import-button:hover{
+    background-color: #36a6d5;
+    transition: background 0.3s;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}

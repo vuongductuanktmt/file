@@ -1,0 +1,398 @@
+
+body{
+    font-family: 'lato', sans-serif;
+}
+@media (max-width: 767px){
+    .hr-banner-img{
+        float: right;
+    }
+    #hr-banner-content{
+        text-align: center;
+    }
+    #hr-banner-img1{
+        padding: 0px;
+        margin-top: 20px;
+    }
+    #meeting-rs-hrbanner{
+        background-image: url(../img/hr-banner-background-787.jpg) !important;
+    }
+    .title-rs-1{
+        margin-top: 50px !important;
+    }
+    .title-rs-2{
+        font-size: 8vw !important;
+    }
+    .title-rs-3{
+        font-size: 4.5vw !important;
+    }
+    #banner-gradient{
+        background: -webkit-linear-gradient(top,rgba(224,237,246,1),rgba(224,237,246,0)) ;
+    }
+    .meeting-font-size{
+        line-height: 0 !important;
+        text-align: center !important;
+        font-size: 12pt !important;
+    }
+    .time-title{
+        text-align: center;
+        padding-top: 5px !important;
+    }
+}
+@media (min-width: 768px){
+    .modal-dialog{
+        width: 100%;
+    }
+}
+@media (max-width: 480px){
+    #hr-banner-img2{
+        width: 100vw;
+        height: auto;
+    }
+}
+@media (max-width: 991px){
+    #box-meeting-left{
+        margin: 15px 0px !important;
+    }
+    #box-meeting-right{
+        margin: 15px 0px !important;
+        margin-top: 50px !important;
+    }
+    .phone-number{
+        margin-top: 10px;
+    }
+}
+#meeting-rs-hrbanner{
+    background-image: url(../img/hr-banner-background.jpg);
+    height: auto;
+    background-size: cover;
+    width: 100%;
+    background-position: center;
+}
+.title-rs-1{
+    font-size: 16pt;
+    text-transform: uppercase;
+    background-color: #0995c9;
+    color: #fff;
+    border-radius: 3px;
+    padding: 0px 10px;
+    display: inline-block;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+.title-rs-2{
+    display: inline-block;
+    font-size: 20pt;
+    text-transform: uppercase;
+    color: #f26421;
+    line-height: 1.25;
+    font-weight: 700;
+    padding-bottom: 15px;
+    border-bottom: 1px #0995c9 solid;
+}
+.title-rs-3{
+    font-size: 16pt;
+    text-transform: uppercase;
+    color: #0995c9;
+    line-height: 1.3;
+    margin-top: 20px;
+}
+.meeting-title{
+    text-transform: uppercase;
+    font-size: 24pt;
+    color: #0995c9;
+    text-align: center;
+    margin-top: 80px;
+}
+#title-workshop{
+    color: #fff;
+    background-color: #20ae5c;
+    padding: 15px 25px;
+}
+#title-tuvan{
+    color: #fff;
+    background-color: #087fc3;
+    padding: 15px 25px;
+    text-transform: uppercase;
+}
+.title-box01{
+    color: #fff;
+    background-color: #727772;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 12pt;
+}
+#box-meeting-left{
+    margin-left: 140px;
+    margin-right: 40px;
+    margin-top: 50px;
+}
+#box-meeting-right{
+    margin-right: 140px;
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.meeting-title-ct:before{
+    content: '';
+    background-image: url(../img/meeting-befor.png);
+    width: 22px;
+    height: 21px;
+    display: inline-block;
+    background-repeat: no-repeat;
+    margin-left: -25px;
+    position: absolute;
+}
+.meeting-title-ct{
+    padding-top: 20px !important;
+    padding: 0px 15px;
+}
+.ct-01{
+}
+.title-box02{
+    list-style: none;
+    padding-left: 37px;
+    background-color: #f6f6f6;
+    padding-bottom: 20px;
+    margin-bottom: 0px;
+}
+.meeting-title-ct p{
+    margin-bottom: 0px;
+}
+#title-box02{
+    height: 20px;
+    background-color: #f6f6f6;
+}
+.title-box-borther{
+    height: 10px;
+    background-color: #e9e9e9;
+}
+
+.box-button{
+	text-align: center;
+    font-size: 18pt;
+    padding: 15px 0px;
+    text-transform: uppercase;
+    display: block;
+}
+a#box-button-02{
+    background-color: #1a99e1;
+}
+
+a#box-button-01{
+    background-color: #09ba54;
+}
+a#box-button-01{
+    color: #e2e2e2;
+    text-decoration: none;
+}
+a#box-button-01:hover{
+    color: #fff;
+}
+a#box-button-02{
+    color: #e2e2e2;
+    text-decoration: none;
+}
+a#box-button-02:hover{
+    color: #fff;
+}
+#contact-detail-ct{
+    color: #0995c9;
+    font-size: 14pt;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+.phone-number{
+    color: #fff;
+    background-color: #0995c9;
+    font-size: 20pt;
+    font-weight: 700;
+    padding: 2px 15px;
+    display: inline-block;
+    border-radius: 5px;
+}
+.logo-bn{
+    text-align: center;
+}
+#meeting-ctm-logo{
+    padding: 50px 0px;
+    background-color: #f3f4f5;
+    margin-top: 80px;
+}
+#myModal{
+    padding: 1vw 1vw !important;
+    overflow-y: no-content;
+}
+.modal-dialog{
+    margin: 0px;
+}
+.day-time-style{
+    padding: 10px 10px;
+    background-color: #f4fcff;
+    border: 1px #d6d6d6 solid;
+    color: #1d99bd;
+    text-align: center;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+.day-time-style-off-day{
+    padding: 10px 10px;
+    background-color: #606060;
+    border: 1px #d6d6d6 solid;
+    color: #fff;
+    text-align: center;
+    border-right: none;
+    box-sizing: border-box;
+}
+.time-row{
+    width: 25%;
+    display: inline-block;
+    float: left;
+}
+.time-title{
+    color: #fff;
+    background-color: #038cb4;
+    padding: 10px 15px;
+    height: 70px;
+    border-bottom: 1px #3ea5c3 solid;
+}
+.day-row{
+    width: 10%;
+    display: inline-block;
+    //float: left;    
+    //min-width: 70px;
+}
+#day-row .day-row:last-child{
+    border-right: 1px #d6d6d6 solid;
+}
+.day-time-row .booking-style{
+	border:1px solid #ccc;
+}
+
+.modal-content{
+    border: none;
+}
+#meeting-calendar{
+    padding: 0px;
+}
+#title-popup{
+    color:#606060;
+    text-align: center;
+    padding: 15px;
+}
+.booking-style{
+    background-image: url(../img/no-booking.svg);
+    background-color:#eee;
+    height: 68px;
+    width: auto;
+    margin: 1px;
+    margin-right: 0px;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+.booking-style-close{
+    background-image: url(../img/close-booking.svg);
+}
+.booking-style-choose{
+    background-image: url(../img/booking.svg);
+}
+.booking-style:hover{
+    background-image: url(../img/no-booking-hover.svg);
+}
+.day-time-row{
+    width: 10%;
+    display: inline-block;
+    //float: left;
+    //min-width: 70px;
+}
+
+#meeting-booking-note{
+    background-color: #fff;
+}
+#note-box-01{
+    position: absolute;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/no-booking.svg);
+    margin: 1px;
+    margin-right: 0px;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+}
+#note-box-02{
+    position: absolute;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/booking.svg);
+    margin: 1px;
+    margin-right: 0px;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+}
+#note-box-03{
+    position: absolute;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-image: url(../img/close-booking.svg);
+    margin: 1px;
+    margin-right: 0px;
+    border-radius: 3px;
+    background-size: cover;
+    background-position: center;
+}
+.note-ct{
+    color: #606060;
+    text-align: left;
+    width: 200px;
+    height: 38px;
+    display: inline-block;
+    font-size: 12pt;
+    padding-left: 40px;
+    padding-top: 7px;
+}
+#note-01{
+    padding-top: 10px;
+}
+#note-02{
+    padding-top: 2px;
+}
+#note-03{
+    padding-top: 2px;
+}
+#booking-button{
+    margin: 10px;
+    background-color: #69b12f;
+    border: none;
+    border-radius: 3px;
+    padding: 8px 15px;
+    padding-bottom: 5px;
+    color: #fff;
+    font-size: 14pt;
+    border-bottom: 2px #4e9416 solid;
+}
+#booking-button:hover{
+    background-color: #77bb41;
+    border-bottom: 2px #59aa19 solid;
+}
+#meeting-booking-button{
+    background-color: #fff;
+}
+.meeting-font-size{
+    font-size: 15pt; 
+    font-weight: 700;
+}
+#meeting-close{
+    float: right;
+    margin: 5px;
+    background-color: transparent;
+    border: none;
+    padding: 0px;
+    padding-right: 5px;
+    color: #ccc;
+}

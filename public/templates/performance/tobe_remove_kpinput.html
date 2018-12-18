@@ -1,0 +1,190 @@
+<style>
+    .td-not-overflow {
+        max-width: 150px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+    }
+</style>
+<div class="kpi-input" style="">
+
+    <div class="clearfix">
+        <table class="table {{ is_child ? 'table-bordered-cyan' : '' }}">
+            <tr>
+                <td style="width: 15%"></td>
+                <td style="width: 15%"></td>
+                <td style="width: 30%"></td>
+                <td style="width: 30%"></td>
+                <td style="width: 10%"></td>
+            </tr>
+            <tr style="background: darkcyan">
+                <td style="text-align: center; padding: 3px; color:#fff;" colspan="2">Mục tiêu</td>
+                <td style="text-align: center; padding: 3px;  color:#fff;">
+                    Phương pháp đo lường
+                </td>
+                <td style="text-align: center; padding: 3px; color:#fff;" colspan="2">
+                    Ghi chú
+                </td>
+            </tr>
+
+            <tr>
+                <td style="padding: 3px; text-align: center; border-right:1px solid #ccc"> {{ operator }}
+                    <input {{#if !organization.enable_to_edit }} disabled="true" {{/if }} value="{{ target }}"
+                           class="form-control input-xs"
+                           style="display: inline;width: 50px;"/></td>
+                <td class="td-not-overflow" style="border-left: 1px solid #ccc; padding: 10px;"> {{ unit }}</td>
+                <td class="td-not-overflow" contenteditable style="padding: 10px;border-left:1px solid #ccc">{{ current_goal }}</td>
+                <td class="td-not-overflow" colspan="2" contenteditable style="padding: 10px;border-left:1px solid #ccc">{{ future_goal }}</td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left; padding: 3px; background: #3CAAAA; color:#fff;">Đánh
+                    giá
+                </td>
+                <td colspan="3" style="text-align: right;padding: 3px; background: #3CAAAA; color:#fff;">
+                    Score Calculation:&nbsp;
+
+                    <select {{#if !organization.enable_to_edit }} disabled="true" {{/if }}
+                            value='{{ score_calculation_type }}'>
+
+                        {{#score_types}}
+                        <option value='{{ id }}'>{{ name }}</option>
+                        {{/score_types}}
+                    </select>
+
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="2" style="padding: 10px;">
+
+                    {{ month_1_name }}
+                    <input {{#if !allow_review_kpi }} disabled="true" {{/if }} value="{{ month_1 }}"
+                           class="form-control input-xs"></td>
+                <td style="padding: 10px;">
+                    {{ month_2_name }}
+                    <input {{#if !allow_review_kpi }} disabled="true" {{/if }} value="{{ month_2 }}"
+                           class="form-control input-xs"></td>
+                <td style="padding: 10px;">
+                    {{ month_3_name }}
+                    <input {{#if !allow_review_kpi }} disabled="true" {{/if }} value="{{ month_3 }}"
+                           class="form-control input-xs"></td>
+                <td style="padding: 10px;">
+                    Quarter <input disabled="True" value="{{ real }}"
+                                   class="form-control input-xs"></td>
+            </tr>
+
+            <tr style="text-align: center; background: ghostwhite; font-weight: 500;">
+                <td>
+                    Kết quả:
+                </td>
+
+                <td colspan="4">
+
+
+                    <div class="progress" style="margin-top:15px; margin-right:5px; ">
+                        <div class="progress-bar
+                             {{#if latest_score >= 90 }}
+
+                                 progress-bar-success
+                            {{ elseif latest_score >= 65  }}
+                                progress-bar-info
+                                {{ else }}
+                                 progress-bar-warning
+
+                            {{/if}}" role="progressbar" aria-valuenow="{{ latest_score }}" aria-valuemin="0"
+                             aria-valuemax="100" style="width: {{ latest_score }}%; min-width: 2em;">
+                            {{ latest_score }}%
+                        </div>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+
+
+        <div class="col-xs-3">
+
+        </div>
+        <div class="col-xs-3">
+
+
+        </div>
+        <div class="col-xs-3">
+
+
+        </div>
+        <div class="col-xs-3">
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+    component.exports = {
+        computed: {
+            // we generate an array of length `max`, so that
+            // we can iterate over it in the template
+            // stars: function () {
+            //      var max = this.get('max');
+            //       return new Array(max);
+            //   }
+        },
+        data: {
+            score_types: [
+                {id: '', name: 'most_recent'},
+                {id: 'sum', name: 'sum'},
+                {id: 'average', name: 'average'}
+
+                // and so on...
+            ]
+        },
+
+
+        change_score_calculation_type: function (kpi) {
+            console.log(kpi);
+
+            switch (kpi.score_calculation_type) {
+                case 'sum':
+                    kpi.score_calculation_type = 'average';
+                    break;
+                case 'average':
+                  //  kpi.score_calculation_type = 'sum';
+                    kpi.score_calculation_type = 'most_recent';
+                    break;
+                case 'most_recent':
+                    kpi.score_calculation_type = '';
+                    break;
+                default :
+                    kpi.score_calculation_type = 'sum';
+                    break;
+            }
+
+            console.log(kpi.score_calculation_type);
+        },
+
+
+        events: {
+            // use the mobile-friendly tap plugin
+
+
+        }
+    }
+</script>
+
+<style>
+    .kpi-input {
+
+        color: #888888;
+
+        /*border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;*/
+        border-radius: 2px;
+        margin-bottom: 15px;
+    }
+
+    .kpi-input
+
+
+</style>
