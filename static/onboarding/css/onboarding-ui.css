@@ -1,0 +1,208 @@
+body{
+    font-family: "lato", sans-serif;
+    background-color: #eeeff4;
+}
+.ob-full-box{
+    font-size: 12pt;
+    text-align: center;
+}
+.ui-ob-title{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18pt;
+    margin-top: 10px;
+    color: #008eaf;
+}
+.ui-ob-box{
+    text-align: center;
+    background-color: #f9f9f9;
+    display: inline-block;
+    padding: 15px;
+    margin-top: 20px;
+}
+.ob-user-icon{
+    width: 60px; 
+}
+.ob-big-icon{
+    text-align: center;
+    margin-top: 50px;
+}
+.in-box-title{
+    font-size: 16pt;
+    color: #008eaf;
+}
+.in-box-button{
+    padding: 5px 10px;
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: inline-block;
+    min-width: 100px;
+}
+.yes-btn{
+    background-color: #00c466;
+    border-bottom: 2px #009950 solid;
+}
+.yes-btn:hover{
+    background-color: #00b55a;
+    border-bottom: 2px #008e47 solid;
+}
+.no-btn{
+    background-color: #8e8e8e;
+    border-bottom: 2px #6d6d6d solid;
+}
+.no-btn:hover{
+    background-color: #7f7f7f;
+    border-bottom: 2px #606060 solid;
+}
+.ob-btn{
+    background-color: #ed4800;
+    border-bottom: 2px #b43700 solid;
+}
+.ob-btn:hover{
+    background-color: #d84200;
+    border-bottom: 2px #a33200 solid;
+}
+.call-to-act{
+    font-size: 20pt;
+    margin-top: 20px;
+    color: #009950;
+}
+
+/* img */
+.row{
+    margin: 0px;
+}
+#img-hd-step-02{
+    margin-top: 10px;
+    border: 2px #ccc solid;
+}
+#img-introduce-01{
+    background-image: url(../img/introduce-01.jpg);
+    width: 100%;
+}
+#img-introduce-02{
+    background-image: url(../img/introduce-02.jpg)
+}
+#img-introduce-03{
+    background-image: url(../img/introduce-03.jpg)
+}
+#img-introduce-04{
+    background-image: url(../img/introduce-04.jpg)
+}
+#img-introduce-05{
+    background-image: url(../img/introduce-05.jpg)
+}
+#img-introduce-06{
+    background-image: url(../img/introduce-06.jpg)
+}
+#img-introduce-07{
+    background-image: url(../img/introduce-07.jpg)
+}
+#img-introduce-08{
+    background-image: url(../img/introduce-08.jpg)
+}
+#img-introduce-09{
+    background-image: url(../img/introduce-09.jpg)
+}
+#img-introduce-10{
+    background-image: url(../img/introduce-10.jpg)
+}
+.img-introduce{
+    background-size: cover;
+}
+.preview-btn{
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px;
+    float: left;
+    font-size: 14pt;
+    border-bottom: 2px #fff solid;
+}
+.preview-btn:hover{
+    color: #000;
+    background-color: #fff;
+}
+.next-btn{
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px;
+    float: right;
+    font-size: 14pt;
+    border-bottom: 2px #fff solid;
+}
+.next-btn:hover{
+    background-color: #fff;
+    color: #000;
+}
+.img-ctr{
+    border-top: 1px #fff solid;
+    background-color: rgba(0, 97, 138, 0.9);
+    bottom: 0px;
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 10px;
+}
+.img-ctr-title{
+    color: #fff;
+    font-size: 16pt;
+    display: inline-block;
+    text-align: center;
+}
+.background-invi{
+    display: none;
+    text-align: center;
+}
+#ob-chesk-box{
+    background-color: #e2f7fe;
+    border-radius: 5px;
+    border: 1px #008cb4 solid;
+    margin: 30px 0px;
+    display: inline-block;
+    text-align: left;
+}
+.kpi-question-title{
+    color: #008cb4;
+    font-size: 16pt;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.kpi-question{
+    padding: 20px 30px;
+}
+.kpi-chesk{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+.checkbox-padding{
+    padding-left: 10px;
+    font-size: 13pt;
+    font-weight: 500;
+    color: #008cb4;
+}
+#ob-fl-noti{
+    display: none;
+    color: #a30000;
+    background-color: #ffd0d0;
+    border: 1px #a30000 solid;
+    padding: 5px 10px;
+    font-size: 14pt;
+}
+#ob-tr-noti{
+    display: none;
+    color: #00bb80;
+    background-color: #d4fff1;
+    border: 1px #00bb80 solid;
+    padding: 5px 10px;
+    font-size: 14pt;
+}
+#ob-chesk-box .tr input:before{
+    font-family: fontawesome;
+}

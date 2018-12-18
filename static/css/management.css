@@ -1,0 +1,14 @@
+.setup-form {
+	margin: 0;
+}
+.setup-form li label {
+	display: inline-block;
+	width: 170px;
+}
+.setup-form li {
+	margin-bottom: 15px;
+}
+
+.errorlist {
+	color: red;
+}

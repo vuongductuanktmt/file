@@ -1,0 +1,185 @@
+#modal-360 {
+	background-color: rgb(218,230,246);
+	padding: 10px;
+	border: 2px solid rgb(0,126,202);
+	overflow: hidden;
+	height: auto;
+}
+#modal-360 .modal-header {
+	border-bottom: none;
+	padding: 9px 0px;
+}
+#modal-360 h3 {
+	font-weight: bold;
+}
+#modal-360.fade.in {
+	top: 2%;
+}
+
+#modal-360 {
+	width:1000px;
+	left: 33%;
+	min-height: none;
+}
+
+#modal-360 span {
+	padding: 0;
+	margin: 0;
+}
+
+#modal-360 p {
+	color: rgb(0,126,202);
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+#body-360 {
+	padding: 0;
+	overflow: hidden;
+	max-height: none;
+}
+
+#self-assessments-360 {
+	border: 1px solid;
+	border-color: rgb(0,128,198);
+	float: left;
+	width: 430px;
+	height: 60px;
+	background-color: rgb(199,227,160);
+	border-radius:10px;
+	padding: 0 0 0 10px;
+	line-height: 1.428571429;
+}
+
+#table-360 th {
+	vertical-align: middle;
+	text-align: left;
+	font-size: 14px;
+	padding-left: 20px;
+	color: #FFF;
+}
+
+#table-360 td,  #table-360 label, #table-360 th, #table-360 tr a {
+	padding-left: 3px;
+	font-size: 12px;
+}
+
+.row-highlight {
+	background-color:  rgb(199,227,160);
+}
+
+
+#begin-360{
+	border-radius: 10px 0 0 0;
+}
+
+#last-360{
+	border-radius: 0 10px 0 0;
+}
+
+#table-360 {
+	border-radius: 14px;
+	border: 2px solid rgb(0,126,202);
+	min-height: 350px;
+	background-color: #FFF;
+	max-height: 380px;
+	overflow: auto;
+}
+
+#invited-360 {
+	line-height: 1.428571429;
+	background-color: #FFF;
+	float: right;
+	width: 460px;
+	height: 60px;
+	border: 1px solid;
+	border-color: rgb(0,128,198);
+	border-radius:10px;
+	padding-left: 10px;
+
+}
+
+.clearfix {
+	clear:both;
+}
+
+.big-letter-360 {
+	font-size: 300%;
+}
+
+#upscript-360 {
+	font-size: 80%;
+  	vertical-align: super;
+}
+
+div #checkbox {
+	text-align:center;
+}
+#table-header-360 {
+	height: 30px;
+	background-color: rgb(0,126,202);
+}
+
+#button-close-360 {
+	width: 50px;
+	height: 30px;
+	color: #FFF;
+	background-color: rgb(57,148,208);
+	border-radius: 5px;
+	border: 1px solid #FFF;
+}
+
+#popup-title-360 {
+	background-color: rgb(57,148,208);
+	color: #FFF;
+	padding: 5px 15px;
+}
+
+#popup-modal-body-360 {
+	padding: 10px;
+}
+
+#inviteModal {
+	line-height: 10px;
+	background-color: rgb(218,230,246);
+	border-radius: 10px;
+	border:	2px solid rgb(57,148,208);
+	width: 556px;
+	padding: 0;
+	overflow: auto;
+	height: auto;
+	top: 20%;
+	width: inherit;
+}
+
+#popup-footer-360 {
+	padding: 0;
+	background-color: rgb(218,230,246);
+	border: 0;
+}
+.table-task tr {
+	height: 30px;
+}
+.tin-content-wrapper {
+	width: 1342px;
+	overflow-y:auto;
+	max-height: 480px;
+	font-size: 80%;
+	border-top: 1px solid black;
+	margin-left: 10px;
+}
+
+.tin-content-wrapper table {
+	width: 100%;
+}
+
+.tin-content-wrapper table th {
+	background: rgb(88,88,90);
+	height: 30px;
+	color:white;
+}
+
+#tin-pagination {
+	margin:10px;
+}

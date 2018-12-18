@@ -1,0 +1,24 @@
+{
+  "name": "cloudjet-kpi",
+  "authors": [
+    "Hong <hong@cloudjetsolutions.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "version": "3.0",
+  "dependencies": {
+    "angular": "1.0.8",
+    "bootstrap": "2.3.2",
+    "jquery-ui": "1.10.4"
+  }
+}

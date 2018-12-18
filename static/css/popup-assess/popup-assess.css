@@ -1,0 +1,318 @@
+@media(max-width:767px){
+    .assess-padding-right{
+        padding-right: 0px!important;
+    }
+    .assess-kpi-curator{
+
+    }
+}
+.assess-popup{
+    font-family: 'LatoWeb', sans-serif;
+    text-align: center;
+}
+.assess-header{
+    border: 0px;
+    background-color: #ccc;
+    color: #fff;
+}
+.assess-header .col-md-6{
+    display: flex;
+    align-items: center;
+
+}
+.assess-titel{
+    font-family: 'LatoWebBold';
+}
+.assess-kpi-header{
+    display: inline-block;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+.ttr-button{
+    border-radius: 0px;
+}
+.ttr-popup{
+    border-radius: 0px !important;
+    border: 0px;
+}
+.ttr-button-hidden{
+    top: 15px;
+    position: absolute;
+    right: 15px;
+    padding: 15px;
+    margin-top: 0px !important;
+}
+.ttr-modal-body{
+    padding: 0px;
+}
+.close:hover{
+    opacity: 0.7;
+}
+.assess-kpi-name{
+    float: left;
+    margin-top: 4px;
+}
+.assess-note{
+    background-color: #fafafa;
+    padding-top: 10px;
+    margin-top: 15px;
+    text-align: left;
+}
+.id-button{
+    float: left;
+}
+.category-button{
+    float: left;
+    font-family: 'LatoWebBold';
+}
+.weighty-point{
+    float: right;
+}
+.weighty-point .main{
+    display: inline-block;
+    float: right;
+    background-color: #3087b0;
+    color: #fff;
+    padding: 5px 10px;
+    margin-right: 5px;
+}
+.assess-perfomance .progress{
+    height: 14px;
+}
+.assess-note textarea{
+    font-size: 14px;
+    width: 100% !important;
+    background-color: #f5f5ee;
+    border: 0px;
+    padding: 5px 10px;
+}
+.assess-note textarea:focus{
+    outline-offset: 0px;
+    outline: 0px;
+}
+.kpi-status{
+    display: inline-block;
+    float: left;
+}
+.assess-padding-left{
+    padding-right: 12px;
+}
+.turn-on{
+    border: 1px #00b37e solid;
+    background-color: #00b37e;
+    color: #fff;
+}
+.period-assess{
+    text-align: center;
+    margin-top: 20px;
+}
+.period{
+    cursor: pointer;
+    display: inline-block;
+    background-color: #e1e1e1;
+    color: #7a7a7a;
+    border: #ccc 1px solid;
+    padding: 5px 10px;
+}
+.period:hover{
+    cursor: pointer;
+    display: inline-block;
+    background-color: #d2d2d2;
+    color: #333;
+    border: #3087b0 1px solid;
+    transition: background-color 0.3s;
+}
+.formula{
+    cursor: pointer;
+    display: inline-block;
+    background-color: #e1e1e1;
+    color: #7a7a7a;
+    border: #ccc 1px solid;
+    padding: 5px 10px;
+}
+.formula:hover{
+    cursor: pointer;
+    display: inline-block;
+    background-color: #d2d2d2;
+    color: #333;
+    border: #3087b0 1px solid;
+    transition: background-color 0.3s;
+}
+.pri-activate{
+    background-color: #3087b0!important;
+    color: #fff!important;
+    border: #3087b0 1px solid;
+}
+.for-activate{
+    background-color: #3087b0!important;
+    color: #fff!important;
+    border: #3087b0 1px solid;
+}
+.handle{
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.dragdealer{
+  position: initial;
+  height: 30px;
+  background: #EEE;
+}
+.dragdealer .handle {
+    position: absolute;
+    top: 2px;
+    left: 15px;
+    cursor: pointer;
+    width: 50px !important;
+    height: 50px;
+    border-radius: 25px;
+}
+.dragdealer .red-bar {
+  width: 100px;
+  height: 30px;
+  background: #CC0000;
+  color: #FFF;
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+}
+.dragdealer .disabled {
+  background: #898989;
+}
+#just-a-slider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#just-a-slider .handle {
+  height: 60px;
+  line-height: 60px;
+  border-radius: 3px;
+}
+
+#just-a-slider .value {
+  padding: 0 0 0 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.drag-progress-bar{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.assess-aria{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    background-color: #fafafa;
+    text-align: left;
+}
+.result-aria{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #fafafa;
+    text-align: left;
+}
+.assess-aria-item{
+    width: 100%;
+    font-size: 13px;
+    padding: 3px 5px !important;
+    display: inline-block;
+    fload: left;
+}
+.control-titel{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.formula{
+    display: inline-block;
+}
+.assess-progress{
+    margin-bottom: 5px;
+}
+.operator-button{
+    padding: 3px 8px !important;
+}
+.assess-target{
+    width: 100%;
+}
+.assess-aria-title{
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.ttr-col{
+    padding:0px !important;
+}
+.assess-persion{
+    display: inline-block;
+    float: left;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #333;
+}
+.assess-edit-persion{
+    cursor: pointer;
+    margin-left: 1px;
+}
+.assess-edit-persion:hover{
+    background-color: #e6e6e6;
+}
+.ttr-container{
+    padding: 0px;
+}
+.assess-kpi-content{
+    background-color: #f3f3f3;
+    padding-bottom: 15px !important;
+}
+.assess-kpi-curator{
+    float: right;
+    margin-right: 40px;
+}
+.assess-ctr-button{
+    font-size: 12px !important;
+    font-family: 'LatoWeb';
+}
+.assess-ctr-button .dropdown-menu{
+    left: -45px !important;
+}
+.assess-padding-right{
+    padding-right: 10px;
+}
+.assess-kpi-detail-ctr{
+    cursor: pointer;
+    background-color: #f5f5ee;
+    padding: 10px;
+    font-family: 'LatoWebBold';
+    color: rgba(51,51,51,0.5);
+    transition: background-color 0.3s, color 0.3s;
+}
+.assess-kpi-detail-ctr:hover{
+    background-color: #ecece3;
+    color: rgba(51,51,51,1);
+    transition: background-color 0.3s, color 0.3s;
+}
+.assess-show-kpi-detail{
+    margin-top: 10px;
+}
+#quaterly-assess .assess-aria-item{
+    max-width: 400px;
+}
+.cjs-assess-popup-control{
+    display: flex;
+    align-items: center;
+    height: 50px;
+}
+.assess-user-name{
+    max-width: 150px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

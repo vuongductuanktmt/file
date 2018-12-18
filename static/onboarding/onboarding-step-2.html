@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>ui-onboarding-step-2</title>
+        <script src="{{ STATIC_URL }}bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}bower_components/bootstrap/dist/css/bootstrap.min.css">
+{#        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>#}
+{#        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">#}
+        <link href='{{STATIC_URL}}fonts/lato-font/latofonts.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="CSS/font-awesome.css">
+        <link rel="stylesheet" href="css/onboarding-ui.css">
+        <script src="js/onboarding-ui.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid ob-full-box">
+            <div class="ob-big-icon">
+                <img class="ob-user-icon" src="img/user-icon.svg">
+            </div>
+            
+            <div class="ui-ob-title">hướng dẫn hệ thống cho tài khoản mới</div>
+            <div class="ui-ob-box">
+                <div class="in-box-title">Hiện tại Bạn chưa thêm nhân viên cấp dưới,<br> vui lòng nhấn vào button để thêm.</div>
+                <a href="http://www.cjs.vn/login/?next=/performance/team-performance/" target="_blank"><div class="in-box-button ob-btn">Thêm nhân viên</div></a>
+                <div class="clearfix"></div>
+                <img id='img-hd-step-02' src="img/add-user.gif">
+                <div class="clearfix"></div>
+                <a href="onboarding-step-3.html"><div class="in-box-button yes-btn">Hoàn thành</div></a>
+            </div>
+        </div>
+    </body>
+</html>

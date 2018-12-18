@@ -1,0 +1,142 @@
+body{
+    font-family: 'lato',sans-serif;
+    font-size: 13pt;
+    color: #606060;
+}
+#swot-big-title{
+    text-align: center;
+    margin-top: 30px;
+}
+.swot-table tbody tr{
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid;
+}
+.swot-table tbody tr:last-child{
+    border-bottom: 1px #ccc solid;
+}
+.swot-table tbody tr.dark{
+    background: #eee;
+    color: #bbb;
+}
+.tb-header{
+    color: #fff;
+}
+#streng{
+    margin-top: 30px;
+}
+#weakness, #strength{
+    margin-top: 30px;
+}
+#opportunity{
+    margin-top: 30px;
+}
+#threat{
+    margin-top: 30px;
+}
+#opt-header{
+    background-color: #188384;
+    border-bottom: 3px #13bacc solid;
+}
+#str-header{
+    background-color: #17a925;
+    border-bottom: 3px #67e8b5 solid;
+}
+#thr-header{
+    background-color: #956f17;
+    border-bottom: 3px #d6b311 solid;
+}
+#wns-header{
+    background-color: #8f2017;
+    border-bottom: 3px #d42211 solid;
+}
+tr>td:nth-child(1){
+    text-align: center;
+    border-right: 1px #ccc solid;
+}
+#strength>tbody>tr>td:nth-child(1){
+    color: #17a925;
+    font-weight: 700;
+    width: 20%;
+}
+#strength>tbody>tr.dark>td:nth-child(1){
+    color: rgba(23,169,37,0.44);
+}
+#weakness>tbody>tr>td:nth-child(1){
+    color: #ad3e00;
+    font-weight: 700;
+    width: 20%;
+}
+#weakness>tbody>tr.dark>td:nth-child(1) {
+    color: rgba(173, 62, 0, 0.44);
+}
+#opportunity>tbody>tr>td:nth-child(1){
+    color: #006d8f;
+    font-weight: 700;
+}
+#opportunity>tbody>tr.dark>td:nth-child(1) {
+    color: rgba(0, 109, 143, 0.44);
+}
+#threat>tbody>tr>td:nth-child(1){
+    color: #ae710f;
+    font-weight: 700;
+    width: 20%;
+}
+#threat>tbody>tr>td:nth-child(1){
+    color: rgba(174,113,15,0.44);
+}
+
+tr>td:nth-child(3){
+    text-align: center;
+    border-left: 1px #ccc solid;
+    font-weight: 700;
+    width: 10%;
+}
+
+.help-block{
+    font-size: 10pt;
+}
+
+tr>td:nth-child(3) .help-block{
+    font-weight: normal;
+}
+
+.ico-setting{
+    cursor: pointer;
+}
+
+/*#streng>tbody>tr:nth-child(odd){
+    background-color: #fcfcfc;
+}
+#streng>tbody>tr:nth-child(even){
+    background-color: #f4f9ed;
+}
+#weakness>tbody>tr:nth-child(odd){
+    background-color: #fcfcfc;
+}
+#weakness>tbody>tr:nth-child(even){
+    background-color: #faf4ef;
+}
+#opportunity>tbody>tr:nth-child(odd){
+    background-color: #fcfcfc;
+}
+#opportunity>tbody>tr:nth-child(even){
+    background-color: #eff8fa;
+}
+#threat>tbody>tr:nth-child(odd){
+    background-color: #fcfcfc;
+}
+#threat>tbody>tr:nth-child(even){
+    background-color: #f8f6e8;
+}*/
+tr>th:nth-child(1){
+    text-align: center;
+    font-size: 16pt;
+}
+tr>th:nth-child(3){
+    text-align: center;
+    border-left: 1px #fff solid;
+}
+.plus-button{
+    background-color: transparent;
+    border: none;
+}

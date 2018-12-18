@@ -1,0 +1,41 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>ui-onboarding-step-1</title>
+        <script src="{{ STATIC_URL }}bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link href='{{STATIC_URL}}fonts/lato-font/latofonts.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="CSS/font-awesome.css">
+        <link rel="stylesheet" href="css/onboarding-ui.css">
+        <script src="js/onboarding-ui.js"></script>
+    </head>
+    <body>
+        <div>
+            <div class="img-introduce" id="img-introduce-08">
+                <div class="img-ctr row">
+                    <div class="col-lg-2"></div>
+                    <div class="img-ctr-title col-lg-8">{% trans "OVERVIEW" %}<b>KPI LEARNING</b></div>
+                    <div class="col-lg-2"><div class="next-btn" id="next-08">{% trans "NEXT" %}</div></div>
+                </div>
+            </div>
+            <div class="img-introduce background-invi" id="img-introduce-09">
+                <div class="img-ctr row">
+                    <div class="col-lg-2"><div class="preview-btn" id="back-09">{% trans "WATCH AGAIN" %}</div></div>
+                    <div class="img-ctr-title col-lg-8">{% trans "MENU SYSTEM" %}</div>
+                    <div class="col-lg-2 block"><div class="next-btn" id="next-09">{% trans "NEXT" %}</div></div>
+                </div>
+            </div>
+            <div class="img-introduce background-invi" id="img-introduce-10">
+                <div class="img-ctr row">
+                    <div class="col-lg-2"><div class="preview-btn" id="back-10">{% trans "WATCH AGAIN" %}</div></div>
+                    <div class="img-ctr-title col-lg-8">{% trans "DETAILS OF THE OVERVIEW MENU" %}</div>
+                    <div class="col-lg-2 block"><a href="onboarding-step-7.html"><div class="in-box-button yes-btn" style="margin: 0px; float: right; font-size: 14pt;">HOÀN THÀNH</div></a></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

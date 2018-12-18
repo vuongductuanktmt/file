@@ -1,0 +1,32 @@
+{
+  "name": "latinize",
+  "version": "0.4.0",
+  "description": "Simple library to convert accents (diacritics) from strings to latin characters.",
+  "main": "latinize.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dundalek/latinize.git"
+  },
+  "homepage": "http://github.com/dundalek/latinize",
+  "authors": [
+    "Jakub Dundalek <dundalek@gmail.com> (http://dundalek.com/)"
+  ],
+  "license": "BSD",
+  "keywords": [
+    "string",
+    "latinize",
+    "latinise",
+    "accents",
+    "diacritics"
+  ],
+  "_release": "0.4.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.0",
+    "commit": "5145267f591626ae9106e1fa28d0ad9d1582f1bb"
+  },
+  "_source": "https://github.com/dundalek/latinize.git",
+  "_target": "^0.4.0",
+  "_originalSource": "latinize",
+  "_direct": true
+}

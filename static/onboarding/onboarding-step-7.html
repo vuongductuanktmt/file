@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>ui-onboarding-step-7</title>
+        <script src="{{ STATIC_URL }}bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="{{ STATIC_URL }}bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ STATIC_URL }}bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <link href='{{STATIC_URL}}fonts/lato-font/latofonts.css' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="CSS/font-awesome.css">
+        <link rel="stylesheet" href="css/onboarding-ui.css">
+        <script src="js/onboarding-ui.js"></script>
+    </head>
+    <body>
+        <div class="container" style="background-color: #fff; text-align: center;">
+            <div class="ui-ob-title" style="font-size: 20pt; padding-top: 50px;">CÙNG LÀM BÀI TẬP ĐỂ HIỂU RÕ HƠN VỀ SMART KPI!</div>
+            <img src="img/smat-kpi.svg">
+            <div class="clearfix"></div>
+            <div id="ob-chesk-box">
+                <div class="kpi-question">
+                    <span class="kpi-question-title">KPI NÀO SAO ĐÂY LÀ SMART KPI?</span>
+                    <div class="kpi-chesk">
+                        <label class="fl">
+                            <input type="checkbox"><span class="checkbox-padding">Tăng sự hài lòng của khách hàng</span>
+                        </label>
+                    </div>
+                    <div class="kpi-chesk">
+                        <label class="tr">
+                            <input type="checkbox"><span class="checkbox-padding">Giảm thời gian máy móc ngừng hoạt động xuống 10% so với cùng kỳ.</span>
+                        </label>
+                    </div>
+                    <div class="kpi-chesk">
+                        <label class="fl">
+                            <input type="checkbox"><span class="checkbox-padding">Giảm chi phí nguyên liệu</span>
+                        </label>
+                    </div>
+                    <div class="kpi-chesk">
+                        <label class="fl">
+                            <input type="checkbox"><span class="checkbox-padding">Giảm tỉ lệ nghỉ việc của nhân viên.</span>
+                        </label>
+                    </div>
+                    <div class="kpi-chesk">
+                        <label class="tr">
+                            <input type="checkbox"><span class="checkbox-padding">Tăng lợi nhuân 5% so với cùng kỳ.</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div id="ob-fl-noti">Bạn trả lời sai! Vui lòng kiểm tra lại.</div>
+            <div class="clearfix"></div>
+            <div id="ob-tr-noti">Chúc mừng! Bạn đã trả lời đúng. Click <b>Hoàn thành</b> để quay lại giao diện <strong>KPI Editor</strong></div>
+            <div class="clearfix"></div>
+            <div class="in-box-button yes-btn" id="onboarding-tess-button" style="margin-bottom: 30px;">Kiểm Tra</div>
+            <a href="http://www.cjs.vn/performance/kpi-editor/"><div class="in-box-button yes-btn" id="onboarding-tess-fn" style="margin-bottom: 30px; display: none;">Hoàn Thành</div></a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,4 @@
+# how to use .gitignore
+# https://labs.consol.de/development/git/2017/02/22/gitignore.html
+# https://ardalis.com/how-to-make-git-forget-tracked-files-in-gitignore
+/dist/

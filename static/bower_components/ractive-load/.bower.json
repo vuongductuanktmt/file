@@ -1,0 +1,15 @@
+{
+  "name": "ractive-load",
+  "homepage": "https://github.com/ractivejs/ractive-load",
+  "version": "0.6.0",
+  "_release": "0.6.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.6.0",
+    "commit": "bff685ce75c2c68cdbd7b5ca5aa37741643b9f05"
+  },
+  "_source": "https://github.com/ractivejs/ractive-load.git",
+  "_target": "^0.6.0",
+  "_originalSource": "ractive-load",
+  "_direct": true
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="33px" viewBox="0 0 28 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.1 (51147) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="R2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Notification---See-all" transform="translate(-123.000000, -170.000000)">
+            <g id="Group-4" transform="translate(124.000000, 170.000000)">
+                <path d="M12.5185185,3.85185185 C5.60473165,3.85185185 0,9.4565835 0,16.3703704 C0,19.9547018 1.50639609,23.1871957 3.92062772,25.4692913" id="Oval-4" stroke="#337AB7" stroke-width="2"></path>
+                <polygon id="Path-2" fill="#337AB7" points="12 0 16.8148148 4.06829805 12 8.00330949"></polygon>
+                <path d="M26,7.27144949 C19.0862131,7.27144949 13.4814815,12.8761811 13.4814815,19.789968 C13.4814815,23.3742995 14.9878776,26.6067933 17.4021092,28.8888889" id="Oval-4" stroke="#337AB7" stroke-width="2" transform="translate(19.740741, 18.080169) scale(-1, -1) translate(-19.740741, -18.080169) "></path>
+                <polygon id="Path-2" fill="#337AB7" transform="translate(11.592593, 28.739086) scale(-1, -1) translate(-11.592593, -28.739086) " points="9.18518519 24.7374312 14 28.8057293 9.18518519 32.7407407"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
