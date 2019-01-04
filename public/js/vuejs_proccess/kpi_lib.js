@@ -1170,7 +1170,7 @@ Vue.component('kpilib', {
         get_data_kpilib: function(page=1){
             //get all kpi in kpilib when query_kpilib: ' ',
             var self = this;
-            var url = '/api/v2/kpilib/';
+            var url =`/api/v2/kpilib/?lang=${self.LANGUAGE_CODE}`;
             if(page && page != 1 && self.next_url_kpi_lib){
                 url = updateQueryStringParameter(self.next_url_kpi_lib,'page', page);
             }

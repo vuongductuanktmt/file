@@ -93,7 +93,7 @@ bottom: 1px;
 }
 /* This is the default Tooltipster theme (feel free to modify or duplicate and create multiple themes!): */
 .tooltipster-default {
-	border-radius: 5px; 
+	border-radius: 5px;
 	border: 2px solid #000;
 	background: #4c4c4c;
 	color: #fff;
@@ -120,7 +120,7 @@ bottom: 1px;
 	margin-left: 4px;
 }
 .tooltipster-light {
-	border-radius: 5px; 
+	border-radius: 5px;
 	border: 1px solid #cccccc;
 	background: #ededed;
 	color: #666666;
@@ -170,7 +170,7 @@ bottom: 1px;
 }
 .tooltipster-arrow span, .tooltipster-arrow-border {
 	display: block;
-	width: 0; 
+	width: 0;
 	height: 0;
 	position: absolute;
 }
@@ -218,7 +218,7 @@ bottom: 1px;
 }
 .tooltipster-arrow-left span, .tooltipster-arrow-left .tooltipster-arrow-border {
 	border-top: 8px solid transparent !important;
-	border-bottom: 8px solid transparent !important; 
+	border-bottom: 8px solid transparent !important;
 	border-left: 8px solid;
 	top: 50%;
 	margin-top: -7px;
@@ -226,13 +226,13 @@ bottom: 1px;
 }
 .tooltipster-arrow-left .tooltipster-arrow-border {
 	border-top: 9px solid transparent !important;
-	border-bottom: 9px solid transparent !important; 
+	border-bottom: 9px solid transparent !important;
 	border-left: 9px solid;
 	margin-top: -8px;
 }
 .tooltipster-arrow-right span, .tooltipster-arrow-right .tooltipster-arrow-border {
 	border-top: 8px solid transparent !important;
-	border-bottom: 8px solid transparent !important; 
+	border-bottom: 8px solid transparent !important;
 	border-right: 8px solid;
 	top: 50%;
 	margin-top: -7px;
@@ -240,7 +240,7 @@ bottom: 1px;
 }
 .tooltipster-arrow-right .tooltipster-arrow-border {
 	border-top: 9px solid transparent !important;
-	border-bottom: 9px solid transparent !important; 
+	border-bottom: 9px solid transparent !important;
 	border-right: 9px solid;
 	margin-top: -8px;
 }
@@ -280,10 +280,10 @@ bottom: 1px;
 	-ms-transform: scale(1,1);
 	transform: scale(1,1);
 	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
-	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 	transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 }
 
@@ -308,10 +308,10 @@ bottom: 1px;
 	-ms-transform: rotateZ(0deg);
 	transform: rotateZ(0deg);
 	-webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 1);
-	-webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
-	-moz-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
-	-ms-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
-	-o-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4); 
+	-webkit-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+	-moz-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+	-ms-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
+	-o-transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
 	transition-timing-function: cubic-bezier(0.230, 0.635, 0.495, 2.4);
 }
 
@@ -323,11 +323,11 @@ bottom: 1px;
 	-ms-transition-property: top;
 	transition-property: top;
 	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
-	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 }
 .tooltipster-fall-show {
 }
@@ -349,10 +349,10 @@ bottom: 1px;
 	-ms-transition-property: left;
 	transition-property: left;
 	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
-	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
-	-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15); 
+	-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
+	-o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 	transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.15);
 }
 .tooltipster-slide.tooltipster-slide-show {
@@ -543,6 +543,10 @@ bottom: 1px;
         border: 2px dashed #d79f00;
     }
 
+    .bsc-category.other {
+        border: 2px dashed #929da3;
+    }
+
     .financial .bsc-category-title {
         background-color: #ff5c00;
     }
@@ -557,6 +561,10 @@ bottom: 1px;
 
     .learn-growth .bsc-category-title {
         background-color: #d79f00;
+    }
+
+	.other .bsc-category-title {
+        background-color: #929da3;
     }
 
     .kpi-group {

@@ -61,7 +61,7 @@ table.nocolor, table.nocolor tr, table.nocolor td {
 	overflow: visible;
 }
 #content{
-    margin-top: 70px !important;
+    /*margin-top: 70px !important;*/
 }
 #container {
 	background: #f9f9f9;

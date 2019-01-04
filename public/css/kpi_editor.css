@@ -1452,7 +1452,7 @@ ul.success {
 .kpi_left_menu {
     position: absolute;
     bottom: -30px;
-    z-index: 100;
+    z-index: 10;
     background: #f9f9f9;
     padding-right: 5px;
     font-size: 12px;
@@ -1467,6 +1467,22 @@ ul.success {
     word-break: break-all;
 }
 .observing_display {
+}
+.kpi-table .operator-kpi, .kpi-table .operator-kpi:hover,
+.kpi-table .operator-kpi:active, .kpi-table .operator-kpi:focus {
+    display: inline-block;
+    border:none;
+    background: none;
+    box-shadow: none;
+    padding: 3px 6px;
+    height: 24px;
+}
+.kpi-table .group-btn-small {
+    text-align: center;
+}
+.kpi-table .group-btn-small button {
+    padding: 2px 6px;
+    font-size: 12px;
 }
 .row-1{
     float:left;
@@ -1509,7 +1525,7 @@ ul.success {
     color: #008b8b;
     background-color: #e4e4e4;
     border-bottom: 1px solid #fff;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
 
 .group-header #hide {
@@ -1546,7 +1562,7 @@ ul.success {
     display: block;
 }
 
-.kpi-expand-item-row div.col-xs-4:first-child {
+.kpi-expand-item-row div.col-xs-4.col-label {
     font-weight: bold;
     display: table;
     padding-left: 0px;
@@ -1746,6 +1762,9 @@ ul.success {
 }
 
 .kpi-table .year-target.current-target .borderless {
+    border: solid 2px #f5a623;
+}
+.kpi-table input.current-target {
     border: solid 2px #f5a623;
 }
 
@@ -2464,6 +2483,15 @@ span.bonus-score {
     border-color: #f27577;
 }
 
+.other .bsc-category-title{
+    background-color: #929da3;
+}
+
+.other .bsc-category-title .category-weight {
+    color: #929da3;
+    border-color: #929da3;
+}
+
 .kpi-group {
     border: 1px solid #e4e4e4;
     min-height: 100px;
@@ -2681,6 +2709,9 @@ span.bonus-score {
 .bsc-category.learn-growth .kpi-group-title {
     background-color: #f27577;
 }
+.bsc-category.other .kpi-group-title {
+    background-color: #929da3;
+}
 
 .bsc-category .kpi-group-title .group-weight {
     white-space: nowrap;
@@ -2708,6 +2739,9 @@ span.bonus-score {
 
 .learn-growth .kpi-group-title {
     border: 1px solid #f27577;
+}
+.other .kpi-group-title {
+    border: 1px solid #d7dfe5;
 }
 
 .strategy-map-company {
@@ -5372,9 +5406,3 @@ button.close{
     vertical-align: unset!important;
 }
 
-.kpi-inp-incharge .autocomplete__results{
-    position: relative!important;
-}
-.autocomplete__inputs .input-change-owner {
-    height: 36px;
-}

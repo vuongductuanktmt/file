@@ -37,9 +37,11 @@ body, .page {
 }
 
 body {
+    /*padding: 10px;*/
+}
+#app .page{
     padding: 10px;
 }
-
 .email-style {
     color: #999EA0;
 }

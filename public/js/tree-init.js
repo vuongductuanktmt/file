@@ -2,6 +2,68 @@ var st = null;
 var node_id = null;
 var language = 'VN';
 var node_old_active = true;
+
+function simulate(element, eventName)
+{
+    var options = extend(defaultOptions, arguments[2] || {});
+    var oEvent, eventType = null;
+
+    for (var name in eventMatchers)
+    {
+        if (eventMatchers[name].test(eventName)) { eventType = name; break; }
+    }
+
+    if (!eventType)
+        throw new SyntaxError('Only HTMLEvents and MouseEvents interfaces are supported');
+
+    if (document.createEvent)
+    {
+        oEvent = document.createEvent(eventType);
+        if (eventType == 'HTMLEvents')
+        {
+            oEvent.initEvent(eventName, options.bubbles, options.cancelable);
+        }
+        else
+        {
+            oEvent.initMouseEvent(eventName, options.bubbles, options.cancelable, document.defaultView,
+            options.button, options.pointerX, options.pointerY, options.pointerX, options.pointerY,
+            options.ctrlKey, options.altKey, options.shiftKey, options.metaKey, options.button, element);
+        }
+        element.dispatchEvent(oEvent);
+    }
+    else
+    {
+        options.clientX = options.pointerX;
+        options.clientY = options.pointerY;
+        var evt = document.createEventObject();
+        oEvent = extend(evt, options);
+        element.fireEvent('on' + eventName, oEvent);
+    }
+    return element;
+}
+
+function extend(destination, source) {
+    for (var property in source)
+      destination[property] = source[property];
+    return destination;
+}
+
+var eventMatchers = {
+    'HTMLEvents': /^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,
+    'MouseEvents': /^(?:click|dblclick|mouse(?:down|up|over|move|out))$/
+}
+var defaultOptions = {
+    pointerX: 0,
+    pointerY: 0,
+    button: 0,
+    ctrlKey: false,
+    altKey: false,
+    shiftKey: false,
+    metaKey: false,
+    bubbles: true,
+    cancelable: true
+}
+
 function valid_input() {
     var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
     var isError = false;
@@ -300,8 +362,10 @@ function remove_person(node, delete_kpis) {
 
                     if (parent_node) {
                         // load_data_node(parent_node);
-                        st.onClick(parent_node.id); // Don't remove this if you don't know what you do
-                        init_node(parent_node);
+                        // st.onClick(parent_node.id); // Don't remove this if you don't know what you do
+                        // init_node(parent_node);
+
+                        clickOneNode(parent_node);
                     }
 
                     peopleApp.get_list_backup_user();
@@ -381,8 +445,8 @@ function bind_new_person() {
                 st.addSubtree(data, 'animate', {
                     onComplete: function () {
                         //alert('add subtree complete! ' + peopleApp.current_node.id);// this deo chay
-
-                         st.onClick('u'+peopleApp.current_node.id);
+                        clickOneNode(st.graph.getNode('u'+peopleApp.current_node.id), false);
+                         // st.onClick('u'+peopleApp.current_node.id);
                     }
                 });
                 swal({
@@ -678,6 +742,15 @@ function init_node(node) {
 
 var data_node = {};
 
+function clickOneNode(node, simulate_native_event = true){
+    if (simulate_native_event){
+        simulate(document.getElementById(node.id), "click");
+    }else{
+        st.onClick(node.id);
+        init_node(node)
+    }
+}
+
 function getTree(nodeId, level, onComplete) {
     var subtree = {
         id: nodeId,
@@ -786,19 +859,23 @@ function init() {
         Events: {
             enable: true,
             onClick: function (node, eventInfo, e) {
-                if (node) {
-                    init_node(node);
-                }
+                // Use event onClick in onCreateLable instead this. Not working.
+                //
+                // if (node) {
+                //     init_node(node);
+                // }
             }
         },
         onBeforeCompute: function (node) {
             console.log("loading " + node.name);
         },
-        onAfterCompute: function () {
+        onAfterCompute: function (node) {
 
             console.log("done");
+            if (!$(node_id).is(':visible')){
+                st.canvas.translate(-st.canvas.translateOffsetX, -st.canvas.translateOffsetY);
+            }
             reach_node();
-
         },
         request: function (nodeId, level, onComplete) {
             getTree(nodeId, level, onComplete);
@@ -810,8 +887,7 @@ function init() {
             label.id = node.id;
             label.innerHTML = node.name;
             label.onclick = function () {
-                st.onClick(node.id);
-                init_node(node);
+                clickOneNode(node, false);
             };
             //set label styles
             var style = label.style;
@@ -874,8 +950,8 @@ function init() {
     //optional: make a translation of the tree
     st.geom.translate(new $jit.Complex(-100, 0), "current");
     //emulate a click on the root node.
-    st.onClick(st.root);
-
+    // st.onClick(st.root);
+    clickOneNode(st.graph.getNode(st.root), false);
     // duan
     // st.refresh();
 
@@ -937,17 +1013,18 @@ function search_person(id) {
     node_search_list = [];
 
     var name = id;
-    $('.symbol_loading').show();
+    // $('.symbol_loading').show();
 
     if (name) {
         var found = false;
         st.graph.eachNode(function (node) {
             if (node.data.user_id == name) {
                 found = true;
-                st.onClick(node.id);
+                // st.onClick(node.id);
+                clickOneNode(node, false);
                 // neu ten ton trai tren cay co san, thi se click vao node do
-                init_node(node);
-                $('.symbol_loading').hide();
+                // init_node(node);
+                // $('.symbol_loading').hide();
                 $('.mango_search_input').focus();
                 return;
             }
@@ -978,7 +1055,7 @@ function search_person(id) {
             });
 
         }
-
+        st.canvas.translate(-st.canvas.translateOffsetX, -st.canvas.translateOffsetY);
 
     } else {
         alert(gettext("Emloyee's name field cannot be empty or is incorrect"));
@@ -1000,8 +1077,9 @@ function reach_node() {
                 node_search_list = node_search_list.slice(0, node_search_list.length - 1);
                 found_node_id = node.id;
                 console.log(node.id);
-                st.onClick(node.id);
-                init_node(node);
+                // st.onClick(node.id);
+                // init_node(node);
+                clickOneNode(node, false);
                 return;
             }
         });
@@ -1014,17 +1092,18 @@ function reach_node() {
             // },200);
             auto_timeout_id = setInterval(function () {
                 if (!st.busy) {
-                    st.onClick(found_node_id);
-                    $('.symbol_loading').hide();
+                    // st.onClick(found_node_id);
+                    // $('.symbol_loading').hide();
+
+                    clickOneNode(st.graph.getNode(found_node_id), false);
                     $('.mango_search_input').focus();
+
                     clearInterval(auto_timeout_id);
                 }
-
             }, 50);
             // st.onClick(found_node_id);
             // st.refresh();
         }
-
     }
 
 }

@@ -188,12 +188,13 @@
     margin-bottom: 0px;
 }
 
-.content-evidence {
+#list_evidences .content-evidence {
     font-size: 12px;
     color: #ababab;
     margin-bottom: 0px;
     word-wrap: break-word;
     white-space: pre-wrap;
+    display: inline;
 }
 
 .empty-evidence, .empty-file {
@@ -987,6 +988,19 @@ div#unique-content {
         text-transform: uppercase;
         border:none!important;
     }
+    .edit_kpis_weight_modal .category-weight{
+
+    }
+    .edit_kpis_weight_modal .category-weight>.weight-percentage{
+        border-bottom: 1px dashed grey;
+    }
+    .edit_kpis_weight_modal .category-weight>.weight-total{
+        /*border-top: 1px dashed white;*/
+    }
+    .edit_kpis_weight_modal .category-head th{
+        vertical-align: middle;
+    }
+
     .row-no-background th{
         background:white;
         border:none!important;
@@ -1056,3 +1070,85 @@ div#unique-content {
         padding-bottom: 10px;
     }
 /* end kpi_editor_toolbar_top.html*/
+
+/* kpi_row_template.html */
+    .KPI_NAME_SECTION {
+        display: block;
+        overflow: hidden;
+        _overflow: visible;
+        zoom: 1;
+    }
+    .KPI_NAME_SECTION .kpi_link_symbol{
+        float: left;
+
+    }
+    .KPI_NAME_SECTION .kpi_name {
+        overflow: hidden;
+
+    }
+/* end kpi_row_template.html */
+
+/* kpi_owner_template.html */
+.kpi-inp-incharge .autocomplete__results{
+    position: relative!important;
+}
+.kpi-inp-incharge .autocomplete__results .autocomplete__results__item+.autocomplete__results__item{
+    border-top: 1px solid #CCCCCC;
+}
+.autocomplete__inputs .input-change-owner {
+    height: 36px;
+}
+
+.kpi-inp-incharge  .autocomplete__results__item .incharge-user-item {
+        display: block;
+        overflow: hidden;
+        _overflow: visible;
+        zoom: 1;
+    }
+.kpi-inp-incharge .autocomplete__results__item .incharge-user-item  .user-thumb{
+    float: left;
+    margin-right: 5px;
+
+}
+.kpi-inp-incharge  .autocomplete__results__item .incharge-user-item .incharge-user-info {
+    overflow: hidden;
+
+}
+.kpi-inp-incharge  .autocomplete__results__item .incharge-user-item .incharge-user-info .incharge-user-email,
+.kpi-inp-incharge  .autocomplete__results__item .incharge-user-item .incharge-user-info .incharge-user-name>.relative-level{
+    color: #706f6e;
+}
+/* end kpi_owner_template.html */
+
+[data-group-header-slug]:hover [class^="el-icon-"]{
+    color: red;
+}
+
+
+
+.kpi-table .kpi-row.row-reload-effect .kpi-id,
+.kpi-table .kpi-row.row-reload-effect .kpi-detail{
+
+      /*background-color: red!important;*/
+      -webkit-animation-name: rowreloadeffect; /* Safari 4.0 - 8.0 */
+      -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+      animation-name: rowreloadeffect;
+      animation-duration: 1s;
+}
+
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes rowreloadeffect {
+  from   {background-color: #e8f8f8;}
+  to  {background-color: #fff4c8;}
+}
+
+/* Standard syntax */
+@keyframes rowreloadeffect {
+  /*from   {background-color: #fff7d7;}*/
+  from   {background-color: #e8f8f8;}
+  to  {background-color: #fff4c8;}
+
+}
+/* end row reload/update effects */

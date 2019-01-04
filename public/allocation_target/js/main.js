@@ -1,7 +1,30 @@
 Array.prototype.insert = function (index, item) {
     this.splice(index, 0, item);
 };
+function format_number(number) {
 
+    var decimalSeparator = ".";
+    var thousandSeparator = ",";
+
+    // make sure we have a string
+    var result = String(number);
+
+    // split the number in the integer and decimals, if any
+    var parts = result.split(decimalSeparator);
+
+    // reverse the string (1719 becomes 9171)
+    result = parts[0].split("").reverse().join("");
+
+    // add thousand separator each 3 characters, except at the end of the string
+    result = result.replace(/(\d{3}(?!$))/g, "$1" + thousandSeparator);
+
+    // reverse back the integer and replace the original integer
+    parts[0] = result.split("").reverse().join("");
+
+    // recombine integer with decimals
+    return parts.join(decimalSeparator);
+
+}
 // -------------------------------------------- seach usser---------------------------------------------
 $(function () {
     $("#search_user").focus(function () {
@@ -112,6 +135,92 @@ String.prototype.nextChar = function (i) {
     }
     return char;
 };
+Vue.component('decimal-input-edit-target', {
+    props: [
+        'value',
+        'inputClass',
+        'disabled',
+        'showBtn'
+    ],
+    template: $('#decimal-input-edit-target-kpi').html(),
+    delimiters: ['${', '}$'],
+    // props: {
+    //     'value':Number,
+    //     'inputclass':String,
+    //     'disabled':[String, Boolean],
+    //      'showBtn':[String, Boolean]
+    // }
+    // ,
+    // template: `
+    //     <input
+    //     v-model="value"
+    //     v-on:input="$emit('input', parseFloat($event.target.value))"
+    //     v-bind:class="inputclass"
+    //     v-on:save="function"
+    //     v-on:cancel="function"
+    //     v-bind:disabled="disabled"
+    //      v-bind:show-btn="false"
+    //     >
+    // `,
+
+    data: function(){
+        return {
+            target_kpi:this.value
+        }
+    },
+    computed: {
+        model:{
+            get: function(){
+                var val = this.target_kpi;
+                // https://stackoverflow.com/a/33671045/6112615
+                return this.$options.filters.decimalDisplay(val);
+            },
+            set: function(val){
+                var newVal=val;
+                if (val === '') {
+                    newVal = '';
+                }
+                else {
+                    var number = val.split(",").join("");
+                    number = Number(number);
+                    // Toan note: ref https://stackoverflow.com/a/5963202/2599460
+                    newVal = isNaN(number) ? 0 : parseFloat(number.toFixed(4));
+                }
+                this.target_kpi = newVal
+                if(!this.showBtn){
+                    this.$emit('input',newVal)
+                }
+                return newVal
+            },
+
+        }
+    },
+    methods: {
+        check_number: function (e){
+            var _number = String.fromCharCode(e.keyCode);
+            if ('0123456789.'.indexOf(_number) !== -1) {
+                return _number;
+            }
+            e.preventDefault();
+            return false;
+        },
+        check_paste: function (evt) {
+            evt.preventDefault();
+            evt.stopPropagation();
+        },
+        save: function () {
+            this.$emit('input',this.target_kpi);
+            this.$emit('save')
+        },
+        cancel: function () {
+            this.$emit('cancel')
+        }
+    }
+
+});
+Vue.filter('decimalDisplay',  function (val) {
+    return (val === 0) ? 0 : (val == null || val === '') ? '' : format_number(val);
+});
 Vue.component('modal-edit-target', {
         delimiters: ['${', '}$'],
         props: ['kpi', 'showmodal', 'optionEditTarget'],
@@ -366,7 +475,6 @@ var targetPage = new Vue({
     el: '#target',
     data: {
         loading:false,
-        kpi_select_not_edit :{},
         actorId: COMMON.ActorId,
         nameActor: COMMON.UserName,
         emailActor: COMMON.EmailActor,
@@ -444,12 +552,6 @@ var targetPage = new Vue({
             })
             return result;
 
-        },
-        saveKpiSelected: function (kpi_select,class_field) {
-            this.kpi_select_not_edit = JSON.parse(JSON.stringify(kpi_select))
-            setTimeout(function(){
-                $('.' + class_field + kpi_select.row_id+":last")[0].children[0].focus();
-            },200);
         },
         checkUserExistedInSearchHistory: function (userID, searchHistoryArray) {
             var that = this;
@@ -818,13 +920,8 @@ var targetPage = new Vue({
                 }
             })
         },
-        hiddenPopover: function(kpi_select){
-            kpi_select = Object.assign(kpi_select, this.kpi_select_not_edit)
-        },
-        cancel: function (kpi_select) {
-            var self = this
+        cancelEditTarget: function () {
             $('.el-popover').hide()
-            self.hiddenPopover(kpi_select)
         },
         getListKpi: function () { // sap xep kpi theo category
             var self = this
@@ -983,10 +1080,6 @@ var targetPage = new Vue({
                 var filesaver = saveAs(new Blob([buffer], {
                     type: "application/octet-stream"
                 }), filename);
-
-                setTimeout(function () {
-                    window.close();
-                }, 4000);
             });
         },
 

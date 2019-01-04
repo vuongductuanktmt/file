@@ -398,6 +398,7 @@
 }
 #exscore-lib-modal .row-item-exscore .block-4-button-add button i{
     font-size:18px;
+    vertical-align: middle;
 }
 #exscore-lib-modal #el-tab-around{
 
@@ -500,6 +501,7 @@
 }
 #add-exscore-lib-modal .btn-add-lib i{
     font-size:18px;
+    vertical-align: middle;
 }
 #add-exscore-lib-modal .btn-add-lib:hover{
     background: #007777;
@@ -531,6 +533,7 @@
 #msg-exscore-lib-modal .modal-body i{
     font-size:81px;
     color:#008b8b;
+    vertical-align: middle;
 }
 #msg-exscore-lib-modal .modal-body h1{
     font-size:22px;

@@ -97,7 +97,7 @@ function create_scrolltofixed() {
         },
         fixed: function () {
         },
-        zIndex: 1003
+        zIndex: 999
 
     });
     return;
